@@ -1,0 +1,340 @@
+body {
+  background-color: #52B69A;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* que siempre ocupe toda la ventana */
+}
+
+header {
+  display: flex;             /* Lo pone todo en fila */
+  justify-content: space-between; /* Lo separa */
+  align-items: center;       /* center vertical */
+  padding: 10px 20px;
+  background: white;
+  background-color: #34A0A4;
+  color:wheat;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   /* <-- centra en vertical */
+  /*He quitado lo de position: fixed pq quedaba demasiado troncho eso en medio jj  --> Esque lo de position fixed es porque la web tiene que ser
+  dinámica jsajjsajam, tipo si haces zoom pa dentro o fuera q no se jorobe*/
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color:#184E77;
+  color:black;
+  text-align: center;
+  padding: 8px 12px; /*Lo he hecho más pequeño que era 1/3 de pagina solo para el copyright*/
+  font-size:x-small; /*Tmb he hecho más peque la letra*/
+
+}
+
+/* Contenedor principal */
+.row {
+  display: flex;          /* pone left y right en fila */
+  width: 100%;
+  flex: 1;         /* altura total de la fila */
+}
+
+/* Columnas izquierda y derecha */
+.left {
+  width: 66.66%;          /* 2/3 de ancho */
+  display: flex;
+  flex-direction: column; /* organiza columna_arriba y columna_abajo verticalmente */
+}
+
+.right {
+  width: 33.33%;          /* 1/3 de ancho */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.right_superior{
+
+  flex: 1;
+  background-color: orange;
+
+
+}
+
+.right_inferior{
+
+  flex: 3;
+  background-color: rgb(0, 139, 19);
+
+
+
+  
+}
+
+
+
+/* Dentro de left: columna_arriba y columna_abajo */
+.columna_arriba {
+  flex: 2;                /* ocupa 2/3 de la altura de left */
+  display: flex;
+  flex-direction: column; /* banner y imagenes_slide verticales */
+  
+}
+
+.columna_abajo {
+  flex: 1;                /* ocupa 1/3 de la altura de left */
+  display: flex;
+  flex-direction: column; /* organiza sus subsecciones verticalmente */
+}
+
+
+
+
+
+
+
+
+
+
+
+.parte_a{
+
+  flex: 1;
+  background-color: yellow;
+
+
+}
+
+.parte_b{
+
+  flex: 4;
+  background-color: mediumpurple;
+  display: flex;
+  
+  
+}
+
+
+.bloque_anuncio_a{
+
+  flex: 1;
+  background-color: rosybrown;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.bloque_anuncio_a_1{
+
+  flex: 1;
+  background-color: rgb(166, 255, 0);
+
+}
+
+.bloque_anuncio_a_2{
+
+  flex: 1;
+  background-color: green;
+
+}
+
+
+
+
+
+.bloque_anuncio_b{
+
+  flex: 1;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+
+.bloque_anuncio_b_1{
+
+  flex: 1;
+  background-color: green;
+
+}
+
+.bloque_anuncio_b_2{
+
+  flex: 1;
+  background-color: blue;
+
+}
+
+
+.bloque_anuncio_c{
+
+  flex: 1;
+  background-color: hotpink;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+
+.bloque_anuncio_c_1{
+
+  flex: 1;
+  background-color: blue;
+
+}
+
+.bloque_anuncio_c_2{
+
+  flex: 1;
+  background-color: green;
+
+}
+
+
+.parte_c{
+
+  flex: 1;
+  background-color: lightgray;
+  
+}
+
+
+.banner {
+  background-image: url("./imagenes/niagara.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+  border-style: solid;
+  border-width: 2px;     /* thickness */
+  border-color: black;   /* color */
+}
+
+.banner-texto h2 {
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+
+}
+
+/* Carrusel */
+.imagenes_slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A759F;
+  padding: 10px;
+  gap: 15px;
+  flex: 3;
+}
+
+.imagenes_slide .pack {
+  width: 250px;
+  background-color: #34A0A4;
+  border-radius: 6px;
+  overflow: hidden;
+  background: ;
+  text-align: center;
+}
+
+.pack img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.pack .info {
+  padding: 10px;
+}
+
+.pack .precio {
+  font-weight: bold;
+  color: darkgreen;
+  display: block;
+  margin: 5px 0;
+}
+
+/* Flechas */
+.flecha {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.comprar {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #184E77;
+  color: white;
+  text-decoration: none; /* quita subrayado */
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+
+
+
+#header_izq,
+#header_ctr,
+#header_dra {
+  flex: 1;   /* each section takes equal horizontal space */
+}
+
+#header_ctr {
+  text-align: center;
+}
+
+#header_dra {
+  text-align: right;
+  
+}
+
+
+#imagen_logo{
+/*Ajustan el tamaño*/
+width:50px;
+height:50px;
+}
+
+#footer_izq,
+#footer_ctr,
+#footer_dra {
+  flex: 1;   /* each section takes equal horizontal space */
+  
+}
+
+#footer_ctr {
+  text-align: center;
+  
+}
+
+#footer_dra {
+  text-align: right;
+}
+
+
+#imagen_pinterest{
+  width:50px;
+  height:50px;
+}
+#imagen_Instagram{
+  width:50px;
+  height:50px;
+}
+#imagen_Strava{
+  width:50px;
+  height:50px;
+}
