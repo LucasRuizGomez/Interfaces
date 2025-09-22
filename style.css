@@ -1,9 +1,8 @@
 body {
-  background-color: #52B69A;
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* que siempre ocupe toda la ventana */
+  background-color:  #ececec;
+  display: flex; /*ESTP HAY QUE BORRARLO*/
+  flex-direction: column; /*ESTO HAY QUE BORRARLO*/
+  min-height: 100vh; /* que siempre ocupe toda la ventana ESTO HAY QUE BORRARLO */
 }
 
 header {
@@ -11,9 +10,9 @@ header {
   justify-content: space-between; /* Lo separa */
   align-items: center;       /* center vertical */
   padding: 10px 20px;
-  background: white;
-  background-color: #34A0A4;
-  color:wheat;
+  
+  background-color: #142d4c;
+  
 }
 
 
@@ -40,7 +39,7 @@ footer {
 .row {
   display: flex;          /* pone left y right en fila */
   width: 100%;
-  flex: 1;         /* altura total de la fila */
+  flex: 1;         /* altura total de la fila   ESTO HAY QUE BORRARLO */
 }
 
 /* Columnas izquierda y derecha */
@@ -88,12 +87,19 @@ footer {
 }
 
 .columna_abajo {
+  margin-top: 10;
   flex: 4;                /* ocupa 4/10 de la altura de left */
   display: flex;
   flex-direction: column; /* organiza sus subsecciones verticalmente */
+
   border-style: solid;
-  border-width: 2px;     /* thickness */
-  border-color: black;   /* color */
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
+  min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
+
+
+
 }
 
 
@@ -213,7 +219,8 @@ footer {
 
 
 .banner {
-  background-image: url("./imagenes/niagara.jpg");
+  margin-top: 10px; /* <-- adds 10px space below the header */
+  background-image: url("./imagenes/cataratas.jpg");
   background-size: cover;
   background-position: center;
   /*height: 200px; Si algo tiene un flex, no tiene un height*/
@@ -221,25 +228,36 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-shadow: 1px 1px 4px black;
+  
+  /*text-shadow: 1px 1px 4px black;*/
+
   border-style: solid;
-  border-width: 2px;     /* thickness */
-  border-color: black;   /* color */
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
   min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
 
 }
 
 .banner-texto h2 {
-  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  /* normal weight */
+ 
   text-align: center;
   margin: 0;
+  color:#ececec;
+  background-color: #385170;
+  border-radius: 10px;
+  padding: 5px;
+  
 
 }
 
 
 /* Carrusel */
 .imagenes_slide {
+  margin-top: 10px; /* <-- adds 10px space below the header */
   display: flex; 
   align-items: center;
   justify-content: center;
@@ -248,6 +266,13 @@ footer {
   /*gap: 15px;*/
   flex: 3;
   min-height: 0;
+
+  border-style: solid;
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
+  min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
+
 }
 
 
@@ -329,34 +354,62 @@ footer {
 
 #header_izq{
 
+  flex: 1;
   font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
   margin: 0;
+  color: #ececec;
+  
 
 
 }
 #header_ctr{
 
-  position:absolute;
-  left: 50%;
-  transform: translateX(-50%); /*Centra todo con independencia de su anchura*/
+  flex: 5;
   display: flex;
+  justify-content: center;   /* center the menu */
+  font-family: 'Courier New', Courier, monospace;
+  color: #ececec;
+
   gap: 20px; /*Espacio entre links*/
-
-
-}
-#header_dra {
-  flex: 1;   /* each section takes equal horizontal space */
-}
-
-#header_ctr {
+  background-color:#385170;;
   text-align: center;
+  padding: 6px 12px;
+  border-radius: 6px; /* Esquinas redonditas */
+  
+
 }
 
-#header_dra {
-  text-align: right;
+#header_ctr a{
+  display: inline-block; 
+  color: white;
+  padding: 10px 12px;
+  text-decoration: none;
+  transition: all 0.4s ease; /*Animacion para que no sea tan brusco el cambio*/
+  
+
+}
+
+
+#header_ctr a:hover {
+  background-color: #9fd3c7;
+  transform: scale(1); /* zoom effect */
+  border-radius: 4px; 
   
 }
+
+
+
+#header_dra {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /*“push everything to the right edge”.*/
+  align-items: center;
+  gap: 10px;
+}
+
+
+
 
 
 #imagen_logo{
