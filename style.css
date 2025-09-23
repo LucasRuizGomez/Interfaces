@@ -66,6 +66,9 @@ footer {
   border-radius: 10px;  /*Mandar correo profe, porque quiero dejar un hueco entre las dos partes pero no cumple lo de los tercios*/
   border-width: 4px;
   border-color: #142d4c;
+  /*Esto es para controlar el tema de que no clipee el background los rounded borders*/
+  overflow: hidden;
+  background-clip: padding-box;
 }
 
 
@@ -123,6 +126,7 @@ footer {
 
   flex: 3;
   background-color: rgb(0, 139, 19);
+  
 
 
 
@@ -137,6 +141,8 @@ footer {
   display: flex;
   flex-direction: column; /* banner y imagenes_slide verticales */
   min-height: 0; /* let banner + slide split space properly */
+  overflow: hidden;
+  background-clip: padding-box;
 
   
 }
@@ -152,6 +158,8 @@ footer {
   border-color: #142d4c;   /* color */
   min-height: 0; /* let banner + slide split space properly */
   border-radius: 10px;
+  overflow: hidden;
+  background-clip: padding-box;
 
 
 
