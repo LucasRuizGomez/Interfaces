@@ -4,11 +4,11 @@ body {
   background-position: center; /* Centers the image */
   background-color:  #ececec;
   margin: 0;
-
   /*display: flex; /*ESTP HAY QUE BORRARLO*/
   /*flex-direction: column; /*ESTO HAY QUE BORRARLO*/
   /*min-height: 100vh; /* que siempre ocupe toda la ventana ESTO HAY QUE BORRARLO */
 }
+
 
 header {
   display: flex;             /* Lo pone todo en fila */
@@ -16,8 +16,7 @@ header {
   align-items: center;       /* center vertical */
   padding: 10px 20px;
   opacity: 0.9; 
-  background-color: #142d4c;
-  
+  background-color: #142d4c; 
 }
 
 
@@ -37,8 +36,8 @@ footer {
   padding: 8px 12px; /*Lo he hecho más pequeño que era 1/3 de pagina solo para el copyright*/
   font-size:x-small; /*Tmb he hecho más peque la letra*/
   box-sizing: border-box;
-
 }
+
 
 /* Contenedor principal */
 .row {
@@ -46,6 +45,7 @@ footer {
   width: 100%;
   /*flex: 1;         /* altura total de la fila   ESTO HAY QUE BORRARLO */
 }
+
 
 /* Columnas izquierda y derecha */
 .left {
@@ -56,12 +56,12 @@ footer {
   margin-left: 10px;
 }
 
+
 .right {
   flex: 1;        /* 1/3 de ancho */
   display: flex;
   flex-direction: column;
   margin-right: 10px;
-  
 }
 
 
@@ -83,7 +83,6 @@ footer {
 
 
 .formulario{
-
   display: flex;
   flex: 2;
   align-items: center; /*Quiero cambiar esto para que este abajo*/
@@ -97,7 +96,6 @@ footer {
   align-items: center;
   justify-content: center;
   font-family: 'Courier New', Courier, monospace;
-
 }
 
 
@@ -106,21 +104,17 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 
 .botones button{
-
   font-family: 'Courier New', Courier, monospace;
   color: white;
   /*border-radius: 5px;*/
   background-color: #142d4c;
   cursor: pointer;
   border: none;
-
   /*Estilo de los botones*/
-  
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -128,19 +122,12 @@ footer {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 7px;
-  
-
-
-
-
 }
+
 
 #boton_inicio{  /*Change this to flex*/
-
   margin-right: 3%;
-
 }
-
 
 
 .right_inferior{
@@ -162,9 +149,6 @@ footer {
 }
 
 
-
-
-
 /*MODIFICAR ESTE CODIGO. NO DEBERIA SER TRES VECES LO MISMO; DEBERIA HABER UNA CLASE Y YA*/
 
 
@@ -173,6 +157,7 @@ footer {
   text-align: center;
   padding-top: 10px;
 }
+
 
 #right_inferior_1 h2{
   display: inline-block;
@@ -185,16 +170,13 @@ footer {
   background-color: #142d4c;
   border-radius: 10px;
   padding: 5px 10px;
-
 }
-
 
 
 #right_inferior_2{
   flex: 1;
   text-align: center;
   padding-top: 10px;
-
 }
 
 #right_inferior_2 h2{
@@ -208,9 +190,7 @@ footer {
   background-color: #142d4c;
   border-radius: 10px;
   padding: 5px 10px;
-
 }
-
 
 
 #right_inferior_3{
@@ -218,6 +198,7 @@ footer {
   text-align: center;
   padding-top: 10px;
 }
+
 
 #right_inferior_3 h2{
   display: inline-block;
@@ -234,57 +215,30 @@ footer {
 }
 
 
-
-
-
 .list {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
+
 
 .list li {
-    margin: 8px 0;
-    font-size: x-large;
-    font-family: 'Courier New', Courier, monospace;
+  margin: 8px 0;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
 }
 
+
 .list a {
-    text-decoration: none;
-    color: #ececec;
-    /*font-weight: bold;*/
+  text-decoration: none;
+  color: #ececec;
+  /*font-weight: bold;*/
 }
+
 
 /* Hover en los enlaces */
 .list a:hover {
-    text-decoration: underline;
-
+  text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Dentro de left: columna_arriba y columna_abajo */
@@ -294,20 +248,15 @@ footer {
   flex-direction: column; /* banner y imagenes_slide verticales */
   min-height: 0; /* let banner + slide split space properly */
   overflow: hidden;
-  background-clip: padding-box;
-
-
-
-
-  
+  background-clip: padding-box; 
 }
+
 
 .columna_abajo {
   margin-top: 10px;
   /*flex: 4;                /* ocupa 4/10 de la altura de left */
   display: flex;
   flex-direction: column; /* organiza sus subsecciones verticalmente */
-
   border-style: solid;
   border-width: 4px;     /* thickness */
   border-color: #142d4c;   /* color */
@@ -316,150 +265,101 @@ footer {
   overflow: hidden;
   background-clip: padding-box;
   height: 1500px;
-
-
-
-
 }
 
 
-
-
-
-
-
-
-
-
-
 .parte_a{
-
   flex: 1;
   background-color: #2c7393bb;
   display: flex;            /* make it a flex container */
   justify-content: center;  /* horizontal center */
   align-items: center;  
-  
-  
-  
-  
 }
+
 
 #titulo_experiencias{
   display: inline-block;
   font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
   font-weight: 400;  /* normal weight */
- 
-  
   margin: 0;
   color:#ececec;
   background-color: #385170;
   border-radius: 10px;
   padding: 5px 10px;
-
-
 }
 
 
-
-
-
 .parte_b{
-
   flex: 4;
   background-color: mediumpurple;
   display: flex; /*Esto no lo quito porque lo de dentro si que va con flex*/
- 
-  
 }
 
 
 .bloque_anuncio_a{
-
   flex: 1;
   background-color: rosybrown;
   display: flex;
   flex-direction: column;
-
 }
+
 
 .bloque_anuncio_a_1{
-
   flex: 1;
   background-color: rgb(166, 255, 0);
-
 }
+
 
 .bloque_anuncio_a_2{
-
   flex: 1;
   background-color: green;
-
 }
-
-
-
 
 
 .bloque_anuncio_b{
-
   flex: 1;
   background-color: red;
   display: flex;
   flex-direction: column;
-
-
 }
 
 
 .bloque_anuncio_b_1{
-
   flex: 1;
   background-color: green;
-
 }
 
-.bloque_anuncio_b_2{
 
+.bloque_anuncio_b_2{
   flex: 1;
   background-color: blue;
-
 }
 
 
 .bloque_anuncio_c{
-
   flex: 1;
   background-color: hotpink;
   display: flex;
   flex-direction: column;
-
-
 }
 
 
 .bloque_anuncio_c_1{
-
   flex: 1;
   background-color: blue;
-
 }
 
-.bloque_anuncio_c_2{
 
+.bloque_anuncio_c_2{
   flex: 1;
   background-color: green;
-
 }
 
 
 .parte_c{
-
   flex: 1;
-  
   background-color: lightgray;
-  
 }
 
 
@@ -474,9 +374,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  
   /*text-shadow: 1px 1px 4px black;*/
-  
   border-style: solid;
   border-width: 4px;     /* thickness */
   border-color: #142d4c;   /* color */
@@ -484,6 +382,7 @@ footer {
   border-radius: 10px;
 
 }
+
 
 .banner-texto h2 {
   font-family: 'Courier New', Courier, monospace;
@@ -496,8 +395,6 @@ footer {
   background-color: #385170;
   border-radius: 10px;
   padding: 5px 10px;
-  
-
 }
 
 
@@ -513,7 +410,6 @@ footer {
   /*flex: 3;*/
   padding: 10px;/*???*/
   min-height: 0;
-
   border-style: solid;
   border-width: 4px;     /* thickness */
   border-color: #142d4c;   /* color */
@@ -536,8 +432,6 @@ footer {
   text-align: center;
   min-height: 0;
   max-height: 100%;
-  
-  
 }
 
 
@@ -546,19 +440,16 @@ footer {
   min-height: 0;
   overflow: hidden; /* keep if not already present */
   flex: 7;   /* 70% */
-  
-  
-
-
 }
 
+
 .imagen img {
-  
   width: 100%;
   height: 100%;
   object-fit: cover;      /* now it applies correctly */
   display: block;         /* removes extra whitespace */
 }
+
 
 .info {
   flex: 3;   /* 30% */
@@ -567,13 +458,14 @@ footer {
   box-sizing: border-box;
 }
 
+
+
 .precio {
   font-weight: bold;
   color: darkgreen;
   display: block;
   margin: 10px 0;
 }
-
 
 
 /* Flechas */
@@ -595,42 +487,28 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
 #header_izq{
-
   flex: 1;
   font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
   margin: 0;
   color: #ececec;
-  
-
-
 }
-#header_ctr{
 
+
+#header_ctr{
   flex: 5;
   display: flex;
   justify-content: center;   /* center the menu */
   font-family: 'Courier New', Courier, monospace;
   color: #ececec;
-
   gap: 20px; /*Espacio entre links*/
   background-color:#385170;
   text-align: center;
   padding: 6px 12px;
   border-radius: 6px; /* Esquinas redonditas */
-  
-
 }
+
 
 #header_ctr a{
   display: inline-block; 
@@ -638,18 +516,14 @@ footer {
   padding: 10px 12px;
   text-decoration: none;
   transition: all 0.4s ease; /*Animacion para que no sea tan brusco el cambio*/
-  
-
 }
 
 
 #header_ctr a:hover {
   background-color: #9fd3c7;
   transform: scale(1); /* zoom effect */
-  border-radius: 4px; 
-  
+  border-radius: 4px;
 }
-
 
 
 #header_dra {
@@ -661,14 +535,12 @@ footer {
 }
 
 
-
-
-
 #imagen_logo{
 /*Ajustan el tamaño*/
 width:50px;
 height:50px;
 }
+
 
 #footer_izq,
 #footer_ctr,
@@ -676,28 +548,23 @@ height:50px;
   flex: 1;   /* each section takes equal horizontal space */
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
- 
+
 }
 
 
 #footer_izq p{
-
   color:#ececec
-
 }
 
 
 #footer_ctr {
   text-align: center;
-  
 }
 
-#footer_ctr a{
 
+#footer_ctr a{
   color: #ececec;
   text-decoration: none;
-
-
 }
 
 
@@ -710,10 +577,14 @@ height:50px;
   width:30px;
   height:30px;
 }
+
+
 #imagen_Instagram{
   width:30px;
   height:30px;
 }
+
+
 #imagen_Strava{
   width:30px;
   height:30px; 
