@@ -10,6 +10,11 @@ body {
 }
 
 
+
+
+
+
+
 header {
   display: flex;             /* Lo pone todo en fila */
   justify-content: space-between; /* Lo separa */
@@ -591,3 +596,105 @@ height:50px;
 }
 
 
+/*DARLE UNA VUELTA A ESTO  QUE ES CTRLC CV*/
+/* --- Helpers responsive --- */
+* { box-sizing: border-box; }
+img, video { max-width: 100%; height: auto; }
+
+/* --- MÓVIL (≤767px): apila columnas y elimina alturas fijas --- */
+@media (max-width: 767px) {
+  .row { flex-direction: column; }
+
+  .left, .right {
+    flex: 1 1 auto;
+    margin: 10px;
+  }
+
+  /* Evitar desbordes por alturas fijas en móvil */
+  .right_inferior,
+  .columna_abajo { height: auto; }
+
+  /* Banner más compacto en móvil */
+  .banner { height: 140px; }
+
+  /* Navegación más flexible en móvil */
+  #header_ctr { flex-wrap: wrap; gap: 8px; }
+  #header_ctr a { padding: 8px 10px; }
+}
+
+/* --- TABLET (768–1023px): 2/3 + 1/3 lado a lado --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .row { flex-direction: row; }
+  .left { flex: 2; }
+  .right { flex: 1; }
+}
+
+/* --- DESKTOP (≥1024px): mantiene distribución en fila --- */
+@media (min-width: 1024px) {
+  .row { flex-direction: row; }
+}
+
+
+
+/* DARLE UNA VUELTA A ESTE CODIGO TAMBIÉN */
+
+/* Version A */
+
+/* Solo en páginas que tienen #registro_nuevos_usuarios */
+body:has(#registro_nuevos_usuarios) {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
+}
+
+/* El bloque central ocupa todo el espacio entre header y footer */
+#registro_nuevos_usuarios {
+  display: flex;            /* opcional: centrar su contenido */
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* Estilo del formulario */
+
+/* Esto parece una Marraná pero bueno si funciona */
+#registro_nuevos_usuarios #registrarse{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  color:#ececec;
+  
+  
+}
+
+
+
+#registro{
+
+  background-color: #142d4c;
+  padding: 30px;
+  border-radius: 10px;
+
+}
+
+.texto_registro{
+  font-family: 'Courier New', Courier, monospace;
+  color:black;
+}
+
+.extra_texto{
+  font-family: 'Courier New', Courier, monospace;
+  color:#ececec;
+}
+
+.margin{
+  margin-bottom: 10px;
+}
+
+
+
+  
+  
