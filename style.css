@@ -259,12 +259,14 @@ footer {
 
 .columna_abajo {
   margin-top: 10px;
+  margin-bottom: 10px;
   /*flex: 4;                /* ocupa 4/10 de la altura de left */
   display: flex;
   flex-direction: column; /* organiza sus subsecciones verticalmente */
   border-style: solid;
   border-width: 4px;     /* thickness */
   border-color: #142d4c;   /* color */
+  background-color: #2c7393bb;
   min-height: 0; /* let banner + slide split space properly */
   border-radius: 10px;
   overflow: hidden;
@@ -275,7 +277,6 @@ footer {
 
 .parte_a{
   flex: 1;
-  background-color: #2c7393bb;
   display: flex;            /* make it a flex container */
   justify-content: center;  /* horizontal center */
   align-items: center;  
@@ -296,25 +297,81 @@ footer {
 
 
 .parte_b{
-  flex: 4;
-  background-color: mediumpurple;
+  flex: 10;
   display: flex; /*Esto no lo quito porque lo de dentro si que va con flex*/
+  gap: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+  
+}
+.imagen_experiencia {
+  min-height: 0;
+  overflow: hidden; /* keep if not already present */
+  flex: 7;   /* 70% */
+  flex-direction: column; /* organiza columna_arriba y columna_abajo verticalmente */
+  margin: 0;                          /* evita la franja extra */
+  border-radius: 12px 12px 0 0;       /* redondeo solo arriba (por si acaso) */
+  overflow: hidden;
 }
 
+.imagen_experiencia img {
+  width: 100%;
+  height: auto;                       /* no deformes */
+  object-fit: cover;
+  display: block;
+}
 
-.bloque_anuncio_a{
-  flex: 1;
-  background-color: rosybrown;
+.info_exp {
+  flex: 3;   /* 30% */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;                /* centra horizontalmente todo */
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 16px 12px 18px;
+  box-sizing: border-box;
+
+  
+}
+
+.vermas {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #184E77;
+  color: white;
+  text-decoration: none; /* quita subrayado */
+  border-radius: 4px;
+  font-weight: bold;
+}
+#imagen_like{
+/*Ajustan el tamaño*/
+width:40px;
+height:40px;
 }
 
 
-.bloque_anuncio_a_1{
+.columna_tarjetas{
   flex: 1;
-  background-color: rgb(166, 255, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
+.Tarjeta{
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #142d4c;
+  border-radius: 12px;                /* bordes redondos del “cuadrado” */
+  overflow: hidden;
+  flex: 1;
+  background-color: #34A0A4;
+
+  
+}
 
 .bloque_anuncio_a_2{
   flex: 1;
@@ -364,7 +421,6 @@ footer {
 
 .parte_c{
   flex: 1;
-  background-color: lightgray;
 }
 
 
