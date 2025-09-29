@@ -832,3 +832,115 @@ body:has(#registro_nuevos_usuarios) {
     margin-top: 10px;  /* space after the title */
     border-radius: 10px;
 }
+
+
+
+
+
+
+/* Solo en páginas que tienen #registro_nuevos_usuarios */
+body:has(#c_main_columna) {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
+}
+
+
+#c_main_columna{
+  display: flex;
+  width: 100%;
+  
+}
+
+#c_izq{
+
+  flex: 4;
+  
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+} 
+
+
+
+
+
+#c_izq_1{
+  margin-top: 10px;
+  flex: 1;
+  background-color: #2c7393bb;
+  border-style: solid;
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
+  min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
+}
+
+#c_izq_2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 3;
+  background-color: #2c7393bb; 
+  border-style: solid;
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
+  min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
+}
+
+#c_izq_2_titulo { text-align: center; } /* opcional si lo quieres centrado */
+
+#c_izq_2_titulo h2{
+  padding: 5px, 10px;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;         /* deja de ocupar el 100% */
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: #142d4c;
+  color: #ececec;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+
+#c_izq_2_texto {
+  text-align: center;
+  max-width: 100%;
+}
+
+#c_izq_2_texto p{
+  font-family: 'Courier New', Courier, monospace;
+  display: block;                 /* not inline-block */
+  margin: 0;
+  padding: 5px 10px;
+  white-space: normal;
+  overflow-wrap: anywhere;        /* modern wrap for long words/URLs */
+  word-break: break-word;         /* fallback */
+  max-width: 100%;                /* don’t exceed container */
+  color: #ececec;
+  border-radius: 10px;
+}
+
+
+#c_der{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 6;
+  background-color: #2c7393bb; 
+  border-style: solid;
+  border-width: 4px;     /* thickness */
+  border-color: #142d4c;   /* color */
+  min-height: 0; /* let banner + slide split space properly */
+  border-radius: 10px;
+  margin-right: 10px;
+
+}
+
+
+
+
+
+
