@@ -223,6 +223,34 @@ footer {
 }
 
 
+
+#right_inferior_4{
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+#right_inferior_4 h2{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  /* normal weight */
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
+
+}
+
+
+
+
+
+
+
 .list {
   list-style-type: none;
   padding-left: 0;
@@ -296,7 +324,7 @@ footer {
   font-weight: 400;  /* normal weight */
   margin: 0;
   color:#ececec;
-  background-color: #385170;
+  background-color: #142d4c;
   border-radius: 10px;
   padding: 5px 10px;
 }
@@ -359,6 +387,8 @@ height:40px;
   gap: 16px;
 }
 
+
+
 .Tarjeta{
   display: flex;
   flex-direction: column;
@@ -366,7 +396,11 @@ height:40px;
   border-radius: 12px;                /* bordes redondos del “cuadrado” */
   overflow: hidden;
   flex: 1;
-  background-color: #34A0A4;
+
+
+  /* Hay que seguir la paleta de colores por eso cambio esto */
+
+  background-color: #9fd3c799;  
 
   
 }
@@ -489,16 +523,40 @@ height:40px;
   cursor: pointer;
 }
 
+
+/* Hay que borrar las clases que hemos quitado */
+
 .boton {
+  font-family: 'Courier New', Courier, monospace;
   display: inline-block;
   padding: 8px 14px;
-  background: #184E77;
+  background: #142d4c;
   color: white;
   text-decoration: none; /* quita subrayado */
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 400;
   margin: 10px 10px;
 }
+
+/* Luego se limpia esto pero esq necesito otro fondo */
+
+
+.boton_alternativo {
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  padding: 8px 14px;
+  background: #385170;
+  color: white;
+  text-decoration: none; /* quita subrayado */
+  border-radius: 4px;
+  font-weight: 400;
+  margin: 10px 10px;
+}
+
+
+
+
+
 
 
 #header_izq{
@@ -675,7 +733,7 @@ body:has(#registro_nuevos_usuarios) {
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
   color:#ececec;
-  mar
+  
   
   
 }
@@ -693,6 +751,7 @@ body:has(#registro_nuevos_usuarios) {
 .texto_registro{
   font-family: 'Courier New', Courier, monospace;
   color:black;
+  margin-top: 20px;
 }
 
 .extra_texto{
@@ -724,22 +783,32 @@ body:has(#registro_nuevos_usuarios) {
 .perfil_datos { display: flex; flex-direction: column; gap: 6px; }
 .nombre_usuario { font-size: 1.1rem; margin: 0; }
 .email_usuario { font-size: 0.9rem; margin: 0; opacity: .9; }
+
+
+
+
+
+/* Porque es filtros un flex? */
+
 .filtros {
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 10px; 
-  justify-content: center;
-  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;   /* permite que bajen si no caben */
+  justify-content: center; /* centrados debajo del título */
+  gap: 10px; /* espacio entre ellos */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
 .filtros label {
+  font-family: 'Courier New', Courier, monospace;
   background: #385170; 
   color: #ececec; 
   padding: 10px 10px; 
   border-radius: 8px;
   cursor: pointer; 
   user-select: none;
+  font-weight: 400;
   margin: 5px 5px;
 
 
@@ -747,9 +816,19 @@ body:has(#registro_nuevos_usuarios) {
 
 
 .searchbar { 
+ 
   display: flex; 
   max-width: 60%;
   margin: 0% auto;
   justify-content: center; 
-  flex:1
+  /* flex:1  Esto no tiene nada de sentido aquí */
   }
+
+
+
+  #calendario {
+    max-width: 100%;   /* fits inside the container */
+    height: auto;      /* keeps proportions */
+    margin-top: 10px;  /* space after the title */
+    border-radius: 10px;
+}
