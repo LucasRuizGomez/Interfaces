@@ -235,31 +235,17 @@ la segunda 1/3 de ancho
 
 		<div class="right_superior">
 
-			<div class="formulario">
-				<form>
-					<input type="text" class="texto_registro" name="nombre" placeholder="Nombre"><br>
-					<input type="text" class="texto_registro" name="apellido" placeholder="Apellido"><br>
-				</form>		
-
-			</div>
-
-			<div class="checkbox">
-				<input type="checkbox" id="recordar_credenciales"/>
-				<label for="recordar_credenciales">Guardar Credenciales</label>
-
-
+			<div class="perfil">
+				<img class="avatar" src="./imagenes/perfil.png" alt="Imagen de perfil">
+				<div class="perfil_datos">
+					<p class="nombre_usuario">Lucas Alcaraz</p>
+					<p class="email_usuario">lucas.alcaraz@gmail.com</p>
+				</div>
 			</div>
 
 			<div class="botones">
-
-				<a class="boton">Iniciar Sesión</a>
-				<a href="version_a.html" class="boton">Registro</a>
-
-
+				<a href="index.html" class="boton">Cerrar Sesión</a>
 			</div>
-
-
-	
 
 		</div>
 
@@ -268,28 +254,40 @@ la segunda 1/3 de ancho
 
 			<div id="right_inferior_1">
 
-				<h2>Top Destinos Mochileros</h2>
+				<h2>Busca experiencias</h2>
 
-				<ul class="list">
-					<li><a href="#">Chile</a></li>
-					<li><a href="#">Sabadell</a></li>
-					<li><a href="#">Orcasitas</a></li>
-					<li><a href="#">Tenochtitlan</a></li>
-				</ul>
+				<div class="filtros">
+					<label><input type="checkbox" name="continente" value="africa"> África</label>
+					<label><input type="checkbox" name="continente" value="america"> América</label>
+				</div>
+				<div class="filtros">
+					<label><input type="checkbox" name="continente" value="asia"> Asia</label>
+					<label><input type="checkbox" name="continente" value="europa"> Europa</label>
+				</div>
 				
+				<div class="searchbar">
+					<input type="search" class="searchbar" placeholder="🔍 Buscar">
+				</div>
 			</div>
 			
 			<div id="right_inferior_2">
 
-				<h2>Consejos Rápidos</h2>
+				<h2>Últimos Consejos</h2>
 
 				<ul class="list">
-					<li><a href="#">No jueges con los Mosquito Torpedos</a></li>
-					<li><a href="#">Correr es mejor que esconderse</a></li>
-					<li><a href="#">A partir de dos copas son gratis</a></li>
-					<li><a href="#">Lo tengo detrás verdad?</a></li>
+					<li><a href="#">Como hacer un torniquete casero</a></li>
+					<li><a href="#">Como defenderse de un tiburón</a></li>
+					<li><a href="#">Como sobrevivir a los hostales</a></li>
+					<li><a href="#">Curas para picaduras de mosquitos torpedos</a></li>
 				</ul>
+				<div class="formulario">
+				<form>
+					 <h2>¿Tienes algún Consejo?</h2> <br>
+					<input type="text" class="texto_registro" name="Título" placeholder="Título del Consejo"><br>
+					<input type="text" class="texto_registro" name="consejo" placeholder="Escribe aqui tu consejo"><br>
+				</form>		
 
+			</div>
 
 
 				
