@@ -373,52 +373,6 @@ height:40px;
   
 }
 
-.bloque_anuncio_a_2{
-  flex: 1;
-  background-color: green;
-}
-
-
-.bloque_anuncio_b{
-  flex: 1;
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.bloque_anuncio_b_1{
-  flex: 1;
-  background-color: green;
-}
-
-
-.bloque_anuncio_b_2{
-  flex: 1;
-  background-color: blue;
-}
-
-
-.bloque_anuncio_c{
-  flex: 1;
-  background-color: hotpink;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.bloque_anuncio_c_1{
-  flex: 1;
-  background-color: blue;
-}
-
-
-.bloque_anuncio_c_2{
-  flex: 1;
-  background-color: green;
-}
-
-
 .parte_c{
   flex: 1;
 }
