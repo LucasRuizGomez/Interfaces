@@ -338,15 +338,7 @@ footer {
   
 }
 
-.vermas {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #184E77;
-  color: white;
-  text-decoration: none; /* quita subrayado */
-  border-radius: 4px;
-  font-weight: bold;
-}
+
 #imagen_like{
 /*Ajustan el tamaño*/
 width:40px;
@@ -491,7 +483,7 @@ height:40px;
   cursor: pointer;
 }
 
-.comprar {
+.boton {
   display: inline-block;
   padding: 8px 14px;
   background: #184E77;
@@ -499,6 +491,7 @@ height:40px;
   text-decoration: none; /* quita subrayado */
   border-radius: 4px;
   font-weight: bold;
+  margin: 0 10px;
 }
 
 
