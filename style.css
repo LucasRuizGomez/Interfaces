@@ -77,7 +77,7 @@ height:50px;
 .left {
   flex: 2;          
   display: flex;
-  flex-direction: column; /
+  flex-direction: column; 
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -289,10 +289,12 @@ height:40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
+  
+  min-height: 200px;      /* let it grow if needed */
   background-color: #2c7393bb;
   border-style: solid;
   border-radius: 10px; 
+  border-width: 4px;
   border-color: #142d4c;
   overflow: hidden;
   background-clip: padding-box;
@@ -300,9 +302,17 @@ height:40px;
 
 .formulario{
   display: flex;
-  flex: 2;
+  flex: 1;
+  flex-direction: column;
   align-items: center; 
   justify-content: center;
+  gap: 12px;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .texto_registro{
@@ -313,21 +323,35 @@ height:40px;
   font-size: 16px;       
   border: 1.5px solid #ccc; 
   border-radius: 6px;        
-  box-sizing: border-box;  
-  margin: 10px; 
+  box-sizing: border-box;
+}
+
+.cajas_registro{
+  display: flex;
+  flex: 0;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .checkbox{
   display: flex;
-  flex: 1;
+  flex: 0;
+  gap: 6px;
   align-items: center;
   justify-content: center;
   font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 10px;
 }
 
 .botones{
-  flex: 1;
+  gap: 10px;
   display: flex;
+  flex: 0;
   align-items: center;
   justify-content: center;
 }
@@ -623,7 +647,7 @@ body:has(#registro_nuevos_usuarios) {
 
 #c_izq_1{
   margin-top: 10px;
-  display: flex
+  display: flex;
   flex:1;
   background-color: #2c7393bb;
   border-style: solid;

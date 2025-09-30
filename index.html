@@ -174,21 +174,24 @@
 
 			<div class="formulario">
 				<form>
-					<input type="text" class="texto_registro" name="nombre" placeholder="Nombre"><br>
-					<input type="text" class="texto_registro" name="apellido" placeholder="Apellido"><br>
+					<div class="cajas_registro">
+						<input type="text" class="texto_registro" name="nombre" placeholder="Nombre">
+						<input type="text" class="texto_registro" name="apellido" placeholder="Apellido">
+					</div>
+
+					<div class="checkbox">
+						<input type="checkbox" id="recordar_credenciales"/>
+						<label for="recordar_credenciales">Guardar Credenciales</label>
+					</div>
+
+					<div class="botones">
+						<button class="boton" type="button">Iniciar Sesión</button>
+						<button class="boton" type="button" onclick="window.location.href='version_a.html'">Registro</button>
+					</div>
 				</form>		
 			</div>
 
-			<div class="checkbox">
-				<input type="checkbox" id="recordar_credenciales"/>
-				<label for="recordar_credenciales">Guardar Credenciales</label>
-			</div>
-
-			<div class="botones">
-				<button class="boton" type="button">Iniciar Sesión</button>
-				<button class="boton" type="button" onclick="window.location.href='version_a.html'">Registro</button>
-			</div>
-
+			
 		</div>
 
 
