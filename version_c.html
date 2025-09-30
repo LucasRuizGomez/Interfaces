@@ -8,18 +8,12 @@
 	<title> Mochileros Descalzos</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header>
-	
-<!--Se Divide en Tres partes -->
-
 	<div id="header_izq"> 
 		<!--Nombre-->
 		Mochileros Descalzos
 	</div> 
-
 
 	<div id="header_ctr">
 		<!--Menú de enlaces-->
@@ -36,14 +30,11 @@
 	<div id="header_dra"> 
 		<!--Logo-->
 		<img id="imagen_logo" src="./imagenes/submarino.png">
-
 		<!--Idioma-->
 		<select name="idiomas" id="idiomas">
 			<option value="Español">ESP</option>
 			<option value="Inglés">ING</option>
 			<option value="Alemán">DE</option>
-
-
 		</select>
 	</div> 
 </header>
@@ -51,11 +42,8 @@
 
 
 
-<!-- div que se divide en dos columnas -->
 <div id="c_main_columna">
-
 	<div id="c_izq">
-
 		<div id="c_izq_1">
 			<div class="pack-small">
 					<div class = "imagen"> 
@@ -79,43 +67,54 @@
 
 			<div id="c_izq_2_texto">
 				<p>Embárcate en una aventura por Vietnam y Camboya con todo lo esencial para tu viaje mochilero. Este pack incluye traslados en bus entre las principales ciudades y destinos turísticos, alojamiento en hostales cuidadosamente seleccionados y una completa guía de visados para cruzar fronteras sin complicaciones.
-
-Descubre la bahía de Ha Long, los templos de Angkor y la vibrante vida callejera de Hanói y Nom Pen con la tranquilidad de tener lo básico organizado. Ideal para viajeros que buscan flexibilidad, ahorro y experiencias auténticas en el corazón del Sudeste Asiático.
-
-Incluye:
-
-Transporte en bus y minivan.
-
-7 noches en hostales con ambiente mochilero.
-
-Asesoría práctica para visados Vietnam–Camboya.
-
-Recomendaciones locales y mapa offline.</p>
-				
+					Descubre la bahía de Ha Long, los templos de Angkor y la vibrante vida callejera de Hanói y Nom Pen con la tranquilidad de tener lo básico organizado. Ideal para viajeros que buscan flexibilidad, ahorro y experiencias auténticas en el corazón del Sudeste Asiático.
+					Incluye: Transporte en bus y minivan, 7 noches en hostales con ambiente mochilero, asesoría práctica para visados Vietnam–Camboya, recomendaciones locales y mapa offline.</p>
 			</div>
-
-
 		</div>
-
-
-
-
 	</div>
 
-	<div id="c_der">
 
 
+<div id="c_der">
+		<!-- FORMULARIO DE COMPRA (Versión C) -->
+	<form id="checkout" class="form-compra" novalidate>
+  		<h2 class="titulo-form">Formulario de compra</h2>
 
-		
-	</div>
+  		<input id="full_name" name="full_name" class="texto_registro" type="text" placeholder="Nombre completo" required>
+		<input id="email" name="email" class="texto_registro" type="email" placeholder="Correo electrónico" required>
 
-    
+  		<label class="extra_texto" for="card_type">Tipo de tarjeta</label>
+  		<select id="card_type" name="card_type" class="texto_registro" required>
+    		<option value="" selected disabled>Selecciona</option>
+    			<option>Visa</option>
+    			<option>Mastercard</option>
+    			<option>AMEX</option>
+  		</select>
 
+		<input id="numero" name="numeroTarjeta" class="texto_registro" type="number" placeholder="Número de Tarjeta" required>
+		<input id="nombreTitular" name="nombreTitular" class="texto_registro" type="name" placeholder="Nombre del Titular de la Tarjeta" required>
+     
+  		<div class="row-2">
+    		<div>
+      			<label class="extra_texto" for="expiry">Fecha de caducidad</label>
+      			<input id="expiry" name="expiry" class="texto_registro" type="text"
+             placeholder="MM/AA" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+    		</div>
+    		<div>
+      			<label class="extra_texto" for="cvv">Código CVV</label>
+      			<input id="cvv" name="cvv" class="texto_registro" type="password"
+           	  inputmode="numeric" placeholder="CVV" pattern="\d{3,4}" required>
+    		</div>
+  		</div>
+
+  		<div class="acciones">
+    		<button type="submit" class="boton_alternativo">Comprar</button>
+   			<button type="reset" class="boton_alternativo">Borrar</button>
+  		</div>
+	</form>
 </div>
 
-
-
-
+</div>
 
 
 <footer>
@@ -133,7 +132,7 @@ Recomendaciones locales y mapa offline.</p>
 	</div>
 
 	<div id="footer_dra">  <!--Imagenes vectoriales para mejor resolución-->
-		<img id="imagen_pinterest" src="./imagenes/pinterest.svg">
+		<img id="imagen_pinterest" src="./imagenes/Pinterest.svg">
 		<img id="imagen_Strava" src="./imagenes/Strava.svg">
 		<img id="imagen_Instagram" src="./imagenes/Instagram.svg">
 	</div>  

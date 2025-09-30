@@ -1,549 +1,21 @@
+/*  */
+
 body {
   background-image: url("./imagenes/underwater_2.jpg");
-  background-size: 100% 100%; /* Stretches and compresses the image */
-  background-position: center; /* Centers the image */
+  background-size: 100% 100%; 
+  background-position: center;
   background-color:  #ececec;
   margin: 0;
-  /*display: flex; /*ESTP HAY QUE BORRARLO*/
-  /*flex-direction: column; /*ESTO HAY QUE BORRARLO*/
-  /*min-height: 100vh; /* que siempre ocupe toda la ventana ESTO HAY QUE BORRARLO */
 }
 
-
-
-
-
-
-
 header {
-  display: flex;             /* Lo pone todo en fila */
-  justify-content: space-between; /* Lo separa */
-  align-items: center;       /* center vertical */
+  display: flex;    
+  justify-content: space-between; 
+  align-items: center;       
   padding: 10px 20px;
   opacity: 0.9; 
   background-color: #142d4c; 
 }
-
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;   /* <-- centra en vertical */
-  /*He quitado lo de position: fixed pq quedaba demasiado troncho eso en medio jj  --> Esque lo de position fixed es porque la web tiene que ser
-  dinámica jsajjsajam, tipo si haces zoom pa dentro o fuera q no se jorobe*/
-  opacity: 0.9;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color:#142d4c;
-  color:black;
-  text-align: center;
-  padding: 8px 12px; /*Lo he hecho más pequeño que era 1/3 de pagina solo para el copyright*/
-  font-size:x-small; /*Tmb he hecho más peque la letra*/
-  box-sizing: border-box;
-}
-
-
-/* Contenedor principal */
-.row {
-  display: flex;          /* pone left y right en fila */
-  width: 100%;
-  /*flex: 1;         /* altura total de la fila   ESTO HAY QUE BORRARLO */
-}
-
-
-/* Columnas izquierda y derecha */
-.left {
-  flex: 2;          /* 2/3 de ancho */
-  display: flex;
-  flex-direction: column; /* organiza columna_arriba y columna_abajo verticalmente */
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-
-.right {
-  flex: 1;        /* 1/3 de ancho */
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-}
-
-
-.right_superior{
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 200px;
-  /*flex: 1;*/
-  background-color: #2c7393bb;
-  border-style: solid;
-  border-radius: 10px;  /*Mandar correo profe, porque quiero dejar un hueco entre las dos partes pero no cumple lo de los tercios*/
-  border-width: 4px;
-  border-color: #142d4c;
-  /*Esto es para controlar el tema de que no clipee el background los rounded borders*/
-  overflow: hidden;
-  background-clip: padding-box;
-}
-
-
-.formulario{
-  display: flex;
-  flex: 2;
-  align-items: center; /*Quiero cambiar esto para que este abajo*/
-  justify-content: center;
-}
-
-
-.checkbox{
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-
-.botones{
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.botones button{
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
-  /*border-radius: 5px;*/
-  background-color: #142d4c;
-  cursor: pointer;
-  border: none;
-  /*Estilo de los botones*/
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 7px;
-}
-
-
-#boton_inicio{  /*Change this to flex*/
-  margin-right: 3%;
-}
-
-
-.right_inferior{
-  margin-top: 10px;
-  /*flex: 3;*/
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  /*#385170*/
-  /*background-image: url("./imagenes/texture_water.jpg");*/
-  background-color: #2c7393bb;
-  border-style: solid;
-  border-radius: 10px;  /*Mandar correo profe, porque quiero dejar un hueco entre las dos partes pero no cumple lo de los tercios*/
-  border-width: 4px;
-  border-color: #142d4c;
-  /*Esto es para controlar el tema de que no clipee el background los rounded borders*/
-  overflow: hidden;
-  background-clip: padding-box;
-}
-
-
-/*MODIFICAR ESTE CODIGO. NO DEBERIA SER TRES VECES LO MISMO; DEBERIA HABER UNA CLASE Y YA*/
-
-
-#right_inferior_1{
-  flex: 1;
-  text-align: center;
-  padding-top: 10px;
-
-}
-
-
-#right_inferior_1 h2{
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
-  text-align: center;
-  margin: 0;
-  color:#ececec;
-  background-color: #142d4c;
-  border-radius: 10px;
-  padding: 5px 10px;
-
-}
-
-
-#right_inferior_2{
-  flex: 1;
-  text-align: center;
-  padding-top: 10px;
-}
-
-#right_inferior_2 h2{
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
-  text-align: center;
-  margin: 0;
-  color:#ececec;
-  background-color: #142d4c;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
-
-#right_inferior_3{
-  flex: 1;
-  text-align: center;
-  padding-top: 10px;
-}
-
-
-#right_inferior_3 h2{
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
-  text-align: center;
-  margin: 0;
-  color:#ececec;
-  background-color: #142d4c;
-  border-radius: 10px;
-  padding: 5px 10px;
-
-}
-
-
-
-#right_inferior_4{
-  flex: 1;
-  text-align: center;
-  padding-top: 10px;
-}
-
-
-#right_inferior_4 h2{
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
-  text-align: center;
-  margin: 0;
-  color:#ececec;
-  background-color: #142d4c;
-  border-radius: 10px;
-  padding: 5px 10px;
-
-}
-
-
-
-
-
-
-
-.list {
-  list-style-type: none;
-  padding-left: 0;
-  align-items: center;
-
-  
-}
-
-
-.list li {
-  margin: 8px 0;
-  font-size: x-large;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-
-.list a {
-  text-decoration: none;
-  color: #ececec;
-  /*font-weight: bold;*/
-}
-
-
-/* Hover en los enlaces */
-.list a:hover {
-  text-decoration: underline;
-}
-
-
-/* Dentro de left: columna_arriba y columna_abajo */
-.columna_arriba {
-  /*flex: 6;                /* ocupa 6/10 de la altura de left */
-  display: flex;
-  flex-direction: column; /* banner y imagenes_slide verticales */
-  min-height: 0; /* let banner + slide split space properly */
-  overflow: hidden;
-  background-clip: padding-box; 
-}
-
-
-.columna_abajo {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /*flex: 4;                /* ocupa 4/10 de la altura de left */
-  display: flex;
-  flex-direction: column; /* organiza sus subsecciones verticalmente */
-  border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  background-color: #2c7393bb;
-  min-height: 0; /* let banner + slide split space properly */
-  border-radius: 10px;
-  overflow: hidden;
-  background-clip: padding-box;
-  height: 1500px;
-}
-
-
-.parte_a{
-  flex: 1;
-  display: flex;            /* make it a flex container */
-  justify-content: center;  /* horizontal center */
-  align-items: center;  
-}
-
-
-#titulo_experiencias{
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
-  margin: 0;
-  color:#ececec;
-  background-color: #142d4c;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
-
-.parte_b{
-  flex: 10;
-  display: flex; /*Esto no lo quito porque lo de dentro si que va con flex*/
-  gap: 16px;
-  padding: 12px;
-  box-sizing: border-box;
-  
-}
-.imagen_experiencia {
-  min-height: 0;
-  overflow: hidden; /* keep if not already present */
-  flex: 7;   /* 70% */
-  flex-direction: column; /* organiza columna_arriba y columna_abajo verticalmente */
-  margin: 0;                          /* evita la franja extra */
-  border-radius: 12px 12px 0 0;       /* redondeo solo arriba (por si acaso) */
-  overflow: hidden;
-}
-
-.imagen_experiencia img {
-  width: 100%;
-  height: auto;                       /* no deformes */
-  object-fit: cover;
-  display: block;
-}
-
-.info_exp {
-  flex: 3;   /* 30% */
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;                /* centra horizontalmente todo */
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  padding: 16px 12px 18px;
-  box-sizing: border-box;
-
-  
-}
-
-
-#imagen_like{
-/*Ajustan el tamaño*/
-width:40px;
-height:40px;
-}
-
-
-.columna_tarjetas{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-
-
-.Tarjeta{
-  display: flex;
-  flex-direction: column;
-  border: 3px solid #142d4c;
-  border-radius: 12px;                /* bordes redondos del “cuadrado” */
-  overflow: hidden;
-  flex: 1;
-
-
-  /* Hay que seguir la paleta de colores por eso cambio esto */
-
-  background-color: #9fd3c799;  
-
-  
-}
-
-.parte_c{
-  flex: 1;
-}
-
-
-.banner {
-  margin-top: 10px; /* <-- adds 10px space below the header */
-  background-image: url("./imagenes/cataratas.jpg");
-  background-size: cover;
-  background-position: center;
-  /*height: 200px; Si algo tiene un flex, no tiene un height*/
-  /*flex: 1;*/
-  height: 200px; /*Delete if coming back to flex*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*text-shadow: 1px 1px 4px black;*/
-  border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  min-height: 0; /* let banner + slide split space properly */
-  border-radius: 10px;
-
-}
-
-
-.banner-texto h2 {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
-  font-weight: 400;  /* normal weight */
- 
-  text-align: center;
-  margin: 0;
-  color:#ececec;
-  background-color: #385170;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
-
-/* Carrusel */
-.imagenes_slide {
-  margin-top: 10px; /* <-- adds 10px space below the header */
-  display: flex; 
-  align-items: center;
-  justify-content: center;
-  background-color: #2c7393bb;
-  /*padding: 10px;*/
-  /*gap: 15px;*/
-  /*flex: 3;*/
-  padding: 10px;/*???*/
-  min-height: 0;
-  border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  min-height: 0; /* let banner + slide split space properly */
-  border-radius: 10px;
-
-}
-.pack {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 700px;     /* ajusta en cada layout si quieres */
-  border: 1px solid #e8e8e8;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,.06);
-}
-
-/* Contenedor de la imagen */
-.imagen { position: relative; }
-
-/* Imagen responsive sin cortes */
-.imagen img {
-  width: 100%;
-  height: auto;          /* clave: NO 100% */
-  aspect-ratio: 16 / 10; /* altura “bonita” sin fijar px */
-  object-fit: cover;     /* recorte elegante si la foto es más alta */
-  display: block;
-}
-
-.info {
-  padding: 18px 20px;
-  text-align: center;
-}
-
-.precio {
-  font-weight: 700;
-  color: #1f7a59;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-
-/* Flechas */
-.flecha {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-
-/* Hay que borrar las clases que hemos quitado */
-
-.boton {
-  font-family: 'Courier New', Courier, monospace;
-  display: inline-block;
-  padding: 8px 14px;
-  background: #142d4c;
-  color: white;
-  text-decoration: none; /* quita subrayado */
-  border-radius: 4px;
-  font-weight: 400;
-  margin: 10px 10px;
-}
-
-/* Luego se limpia esto pero esq necesito otro fondo */
-
-
-.boton_alternativo {
-  font-family: 'Courier New', Courier, monospace;
-  display: inline-block;
-  padding: 8px 14px;
-  background: #385170;
-  color: white;
-  text-decoration: none; /* quita subrayado */
-  border-radius: 4px;
-  font-weight: 400;
-  margin: 10px 10px;
-}
-
-
-
-
-
-
 
 #header_izq{
   flex: 1;
@@ -552,7 +24,6 @@ height:40px;
   margin: 0;
   color: #ececec;
 }
-
 
 #header_ctr{
   flex: 5;
@@ -567,7 +38,6 @@ height:40px;
   border-radius: 6px; /* Esquinas redonditas */
 }
 
-
 #header_ctr a{
   display: inline-block; 
   color: white;
@@ -576,13 +46,11 @@ height:40px;
   transition: all 0.4s ease; /*Animacion para que no sea tan brusco el cambio*/
 }
 
-
 #header_ctr a:hover {
   background-color: #9fd3c7;
   transform: scale(1); /* zoom effect */
   border-radius: 4px;
 }
-
 
 #header_dra {
   flex: 1;
@@ -592,7 +60,6 @@ height:40px;
   gap: 10px;
 }
 
-
 #imagen_logo{
 /*Ajustan el tamaño*/
 width:50px;
@@ -600,146 +67,451 @@ height:50px;
 }
 
 
+/* Contenedor principal */
+.row {
+  display: flex;     
+  width: 100%;
+}
+
+/* Columnas izquierda index */
+.left {
+  flex: 2;          
+  display: flex;
+  flex-direction: column; /
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Izquierda arriba */
+.columna_arriba {
+  min-height: 0; 
+  overflow: hidden;
+  background-clip: padding-box; 
+}
+
+/* Baner */
+.banner {
+  margin-top: 10px; 
+  background-image: url("./imagenes/cataratas.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 4px;     
+  border-color: #142d4c;  
+  min-height: 0; 
+  border-radius: 10px;
+}
+
+.banner-texto h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #385170;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+  /* Carrusel */
+.imagenes_slide {
+  margin-top: 10px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-color: #2c7393bb;
+  padding: 10px;
+  min-height: 0;
+  border-style: solid;
+  border-width: 4px;     
+  border-color: #142d4c;   
+  min-height: 0; 
+  border-radius: 10px;
+}
+
+.flecha {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.pack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;    
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.info {
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.precio {
+  color: #1f7a59;
+}
+
+.boton {
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  padding: 14px 28px;
+  background: #142d4c;
+  color: white;
+  text-decoration: none; 
+  border-radius: 8px;
+  cursor: pointer;  
+  margin: 10px 10px;
+  font-size: 18px;
+}
+
+/* Izquierda abajo */
+.columna_abajo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column; 
+  border-style: solid;
+  border-width: 4px;   
+  border-color: #142d4c;   
+  background-color: #2c7393bb;
+  min-height: 0; 
+  border-radius: 10px;
+  overflow: hidden;
+  background-clip: padding-box;
+  height: 1500px;
+}
+
+.parte_a{
+  flex: 1;
+  display: flex;            
+  justify-content: center; 
+  align-items: center;  
+}
+
+#titulo_experiencias{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400; 
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.parte_b{
+  flex: 10;
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.columna_tarjetas{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Tarjeta{
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #142d4c;
+  border-radius: 12px;                
+  overflow: hidden;
+  flex: 1;
+  background-color: #9fd3c799;  
+}
+
+.imagen_experiencia {
+  min-height: 0;
+  overflow: hidden; 
+  flex: 7;  
+  flex-direction: column; 
+  margin: 0;                         
+  border-radius: 12px 12px 0 0;       
+  overflow: hidden;
+}
+
+.imagen_experiencia img {
+  width: 100%;
+  height: auto;                     
+  object-fit: cover;
+  display: block;
+}
+
+.info_exp {
+  flex: 3;   
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;           
+  text-align: center;
+  gap: 10px;
+  padding: 16px 12px 18px;
+  box-sizing: border-box;
+}
+
+#imagen_like{
+width:40px;
+height:40px;
+}
+
+.parte_c{
+  flex: 1;
+}
+
+/* Columna derecha index */
+.right {
+  flex: 1;       
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.right_superior{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  background-color: #2c7393bb;
+  border-style: solid;
+  border-radius: 10px; 
+  border-color: #142d4c;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+
+.formulario{
+  display: flex;
+  flex: 2;
+  align-items: center; 
+  justify-content: center;
+}
+
+.texto_registro{
+  font-family: 'Courier New', Courier, monospace;
+  color:black;
+  width: 220px;          
+  padding: 8px 10px;    
+  font-size: 16px;       
+  border: 1.5px solid #ccc; 
+  border-radius: 6px;        
+  box-sizing: border-box;  
+  margin: 10px; 
+}
+
+.checkbox{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.botones{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right_inferior{
+  margin-top: 10px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c7393bb;
+  border-style: solid;
+  border-radius: 10px;  
+  border-width: 4px;
+  border-color: #142d4c;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+
+#right_inferior_1{
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#right_inferior_1 h2{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+  align-items: center;
+}
+
+/*LUKIII Esto no se q es miralo q este bn y si lo esta quita los comments*/
+/*DESDE AQUI-------------------*/
+.list li {
+  margin: 8px 0;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.list a {
+  text-decoration: none;
+  color: #ececec;
+  /*font-weight: bold;*/
+}
+
+/* Hover en los enlaces */
+.list a:hover {
+  text-decoration: underline;
+}
+
+/*HASTA AQIIIIIIIIII--------------------------*/
+
+#right_inferior_2{
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#right_inferior_2 h2{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#right_inferior_3{
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#right_inferior_3 h2{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  opacity: 0.9;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color:#142d4c;
+  color:black;
+  text-align: center;
+  padding: 8px 12px; 
+  font-size:x-small;
+  box-sizing: border-box;
+}
+
 #footer_izq,
 #footer_ctr,
 #footer_dra {
-  flex: 1;   /* each section takes equal horizontal space */
+  flex: 1;   
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
-
 }
-
 
 #footer_izq p{
   color:#ececec
 }
 
-
 #footer_ctr {
   text-align: center;
 }
-
 
 #footer_ctr a{
   color: #ececec;
   text-decoration: none;
 }
 
-
 #footer_dra {
   text-align: center;
 }
-
 
 #imagen_pinterest{
   width:30px;
   height:30px;
 }
-
-
 #imagen_Instagram{
   width:30px;
   height:30px;
 }
-
-
 #imagen_Strava{
   width:30px;
   height:30px; 
 }
 
 
-/*DARLE UNA VUELTA A ESTO  QUE ES CTRLC CV*/
-/* --- Helpers responsive --- */
-* { box-sizing: border-box; }
-img, video { max-width: 100%; height: auto; }
-
-/* --- MÓVIL (≤767px): apila columnas y elimina alturas fijas --- */
-@media (max-width: 767px) {
-  .row { flex-direction: column; }
-
-  .left, .right {
-    flex: 1 1 auto;
-    margin: 10px;
-  }
-
-  /* Evitar desbordes por alturas fijas en móvil */
-  .right_inferior,
-  .columna_abajo { height: auto; }
-
-  /* Banner más compacto en móvil */
-  .banner { height: 140px; }
-
-  /* Navegación más flexible en móvil */
-  #header_ctr { flex-wrap: wrap; gap: 8px; }
-  #header_ctr a { padding: 8px 10px; }
-}
-
-/* --- TABLET (768–1023px): 2/3 + 1/3 lado a lado --- */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .row { flex-direction: row; }
-  .left { flex: 2; }
-  .right { flex: 1; }
-}
-
-/* --- DESKTOP (≥1024px): mantiene distribución en fila --- */
-@media (min-width: 1024px) {
-  .row { flex-direction: row; }
-}
-
-
-
-/* DARLE UNA VUELTA A ESTE CODIGO TAMBIÉN */
-
-/* Version A */
-
-/* Solo en páginas que tienen #registro_nuevos_usuarios */
+/*VERSION_A---------------------------------------*/
 body:has(#registro_nuevos_usuarios) {
   margin: 0;
-  min-height: 100svh;
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
+  min-height: 100vh;       
+  display: grid;              
+  grid-template-rows: auto 1fr auto;
 }
 
-/* El bloque central ocupa todo el espacio entre header y footer */
 #registro_nuevos_usuarios {
-  display: flex;            /* opcional: centrar su contenido */
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+#registro{
+  background-color: #142d4c;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-
-
-
-/* Estilo del formulario */
-
-/* Esto parece una Marraná pero bueno si funciona */
 #registro_nuevos_usuarios #registrarse{
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
   color:#ececec;
-  
-  
-  
 }
-
-
-
-#registro{
-
-  background-color: #142d4c;
-  padding: 30px;
-  border-radius: 10px;
-
-}
-
-.texto_registro{
-  font-family: 'Courier New', Courier, monospace;
-  color:black;
-  margin-top: 20px;
-}
-
 .extra_texto{
   font-family: 'Courier New', Courier, monospace;
   color:#ececec;
@@ -749,11 +521,19 @@ body:has(#registro_nuevos_usuarios) {
   margin-bottom: 10px;
 }
 
+.boton_alternativo {
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  padding: 8px 14px;
+  background: #385170;
+  color: white;
+  text-decoration: none; /* quita subrayado */
+  border-radius: 4px;
+  font-weight: 400;
+  margin: 10px 10px;
+}
 
-
-  
-  
-/* Perfil */
+/*VERSION_B---------------------------------------*/
 .perfil {
   display: flex;
   align-items: center;
@@ -770,21 +550,14 @@ body:has(#registro_nuevos_usuarios) {
 .nombre_usuario { font-size: 1.1rem; margin: 0; }
 .email_usuario { font-size: 0.9rem; margin: 0; opacity: .9; }
 
-
-
-
-
-/* Porque es filtros un flex? */
-
 .filtros {
   display: flex;
-  flex-wrap: wrap;   /* permite que bajen si no caben */
-  justify-content: center; /* centrados debajo del título */
-  gap: 10px; /* espacio entre ellos */
+  flex-wrap: wrap;  
+  justify-content: center;
+  gap: 10px; 
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 
 .filtros label {
   font-family: 'Courier New', Courier, monospace;
@@ -796,10 +569,7 @@ body:has(#registro_nuevos_usuarios) {
   user-select: none;
   font-weight: 400;
   margin: 5px 5px;
-
-
 }
-
 
 .searchbar { 
  
@@ -810,8 +580,25 @@ body:has(#registro_nuevos_usuarios) {
   /* flex:1  Esto no tiene nada de sentido aquí */
   }
 
+  #right_inferior_4{
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+}
 
+#right_inferior_4 h2{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: 400;  /* normal weight */
+  text-align: center;
+  margin: 0;
+  color:#ececec;
+  background-color: #142d4c;
+  border-radius: 10px;
+  padding: 5px 10px;
 
+}
   #calendario {
     max-width: 100%;   /* fits inside the container */
     height: auto;      /* keeps proportions */
@@ -819,28 +606,13 @@ body:has(#registro_nuevos_usuarios) {
     border-radius: 10px;
 }
 
-
-
-
-
-
-/* Solo en páginas que tienen #registro_nuevos_usuarios */
-body:has(#c_main_columna) {
-  margin: 0;
-  min-height: 100svh;
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
-}
-
-
+/*VERSION_C---------------------------------------*/
 #c_main_columna{
   display: flex;
   width: 100%;
-  
 }
 
 #c_izq{
-
   flex: 4;
   max-width: 100%;
   display: flex;
@@ -848,10 +620,6 @@ body:has(#c_main_columna) {
   margin-right: 10px;
   margin-left: 10px;
 } 
-
-
-
-
 
 #c_izq_1{
   margin-top: 10px;
@@ -867,8 +635,6 @@ body:has(#c_main_columna) {
   overflow: hidden;
 }
 
-
-/* Variante para la versión C */
 .pack-small {
   display: flex;
   border: 1px solid #e8e8e8;
@@ -879,29 +645,36 @@ body:has(#c_main_columna) {
   width: min(540px, 100% - 32px); /* 32px = 16px izq + 16px dcha */
   margin-inline: auto;            /* centra horizontalmente */
   margin-block: 16px;             /* mismo margen arriba y abajo */
-    flex: none;                   /* evita que se estire (si .pack tiene flex:1) */
+  flex: none;                   /* evita que se estire (si .pack tiene flex:1) */
   box-sizing: border-box;
 }
 
-/* Imagen más baja */
-.pack-small .imagen img {
-    display: block;
-  width: 100%;
-  height: auto;                   /* importante para que no se recorte al hacer zoom */
-  aspect-ratio: 16 / 9;           /* proporción agradable */
-  object-fit: cover;
-  flex: 0 0 60%;                /* 60% imagen / 40% info; ajustable 65/35, 50/50, etc. */
-  min-height: 0;    
+#c_izq_1 .pack-small{
+  display: flex;            /* fila: imagen | info */
+  align-items: stretch;     /* ambas columnas a la misma altura */
+}
 
-  }
+#c_izq_1 .pack-small .imagen{
+  flex: 0 0 60%;            /* ancho de la columna de imagen */
+  display: flex;            /* para que el <img> pueda estirarse en alto */
+  min-height: 0;
+}
+
+#c_izq_1 .pack-small .imagen img{
+  width: 100%;
+  height: 100%;             /* CLAVE: llena toda la altura disponible */
+  object-fit: cover;        /* recorta manteniendo proporción */
+  aspect-ratio: auto;       /* anula el 16/10 global */
+  display: block;
+}
 
 /* Info más compacta */
 .pack-small .info {
-  padding: 14px 16px; 
-  text-align: center;
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centra el texto verticalmente */
 }
-
-
 
 #c_izq_2{
   margin-top: 10px;
@@ -931,26 +704,26 @@ body:has(#c_main_columna) {
 
 
 #c_izq_2_texto {
-  text-align: center;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
 }
 
 #c_izq_2_texto p{
-  font-family: 'Courier New', Courier, monospace;
-  display: block;                 /* not inline-block */
-  margin: 0;
-  padding: 5px 10px;
-  white-space: normal;
-  overflow-wrap: anywhere;        /* modern wrap for long words/URLs */
-  word-break: break-word;         /* fallback */
-  max-width: 100%;                /* don’t exceed container */
-  color: #ececec;
-  border-radius: 10px;
+  max-width: 68ch;               /* ~65–70 caracteres por línea = más legible */
+  margin: 8px auto 18px;
+  text-align: justify;           /* justifica líneas */
+  text-justify: inter-word;      /* reparte mejor el espacio */
+  line-height: 1.6;              /* más separación entre líneas */
+  letter-spacing: .1px;          /* un pelín de aire entre letras */
+  hyphens: auto;                 /* guiones automáticos para cortar palabras largas */
+  word-break: normal;            /* evita cortes feos */
+  color: #e9f1f6;                /* opcional: sube contraste si lo necesitas */
 }
 
 
 #c_der{
-
   margin-top: 10px;
   margin-bottom: 10px;
   flex: 6;
@@ -961,7 +734,104 @@ body:has(#c_main_columna) {
   min-height: 0; /* let banner + slide split space properly */
   border-radius: 10px;
   margin-right: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
 
+}
+
+.form-compra{
+  width: min(560px, 100%);
+  background: #142d4c;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  padding: 20px;
+  margin: auto auto;
+}
+
+/* Título */
+.titulo-form{
+  margin: 0 0 14px 0;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #142d4c;
+  font-weight: 700;
+}
+
+/* Inputs heredados de A, solo afinamos tamaños y separación */
+.form-compra .texto_registro{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cfd8e3;
+  border-radius: 8px;
+  background: #f8fafc;
+  outline: none;
+}
+.form-compra .texto_registro:focus{
+  border-color: #385170;
+  background: #ffffff;
+}
+
+/* Separación vertical homogénea */
+.form-compra label{ display:block; margin-top: 12px; margin-bottom: 6px; }
+
+/* Dos columnas para caducidad / CVV */
+.row-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Botones alineados como en el wireframe */
+.acciones{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Opcional: igualar alto de los botones heredados */
+.acciones .boton,
+.acciones .boton_alternativo{ padding: 10px 18px; }
+
+
+
+
+/*?????????'' NO SE QUE ES :((((((( */
+
+
+.botones button{
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  /*border-radius: 5px;*/
+  background-color: #142d4c;
+  cursor: pointer;
+  border: none;
+  /*Estilo de los botones*/
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 7px;
+}
+
+#boton_inicio{  /*Change this to flex*/
+  margin-right: 3%;
+}
+
+
+
+
+/* Solo en páginas que tienen #registro_nuevos_usuarios */
+body:has(#c_main_columna) {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
 }
 
 
