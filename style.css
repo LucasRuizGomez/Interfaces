@@ -1,5 +1,3 @@
-/*  */
-
 body {
   background-image: url("./imagenes/underwater_2.jpg");
   background-size: 100% 100%; 
@@ -28,10 +26,10 @@ header {
 #header_ctr{
   flex: 5;
   display: flex;
-  justify-content: center;   /* center the menu */
+  justify-content: center;   
   font-family: 'Courier New', Courier, monospace;
   color: #ececec;
-  gap: 20px; /*Espacio entre links*/
+  gap: 20px; 
   background-color:#385170;
   text-align: center;
   padding: 6px 12px;
@@ -48,20 +46,19 @@ header {
 
 #header_ctr a:hover {
   background-color: #9fd3c7;
-  transform: scale(1); /* zoom effect */
+  transform: scale(1.1); /* efecto que hace zoom*/
   border-radius: 4px;
 }
 
 #header_dra {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /*“push everything to the right edge”.*/
+  justify-content: flex-end; /*Te empuja todo a la derecha*/
   align-items: center;
   gap: 10px;
 }
 
 #imagen_logo{
-/*Ajustan el tamaño*/
 width:50px;
 height:50px;
 }
@@ -289,8 +286,7 @@ height:40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  min-height: 200px;      /* let it grow if needed */
+  min-height: 200px;      
   background-color: #2c7393bb;
   border-style: solid;
   border-radius: 10px; 
@@ -395,8 +391,7 @@ height:40px;
   align-items: center;
 }
 
-/*LUKIII Esto no se q es miralo q este bn y si lo esta quita los comments*/
-/*DESDE AQUI-------------------*/
+/* Estilo de lista de derecha */
 .list li {
   margin: 8px 0;
   font-size: x-large;
@@ -406,15 +401,12 @@ height:40px;
 .list a {
   text-decoration: none;
   color: #ececec;
-  /*font-weight: bold;*/
 }
 
-/* Hover en los enlaces */
+/* Hover en los enlaces subraya */
 .list a:hover {
   text-decoration: underline;
 }
-
-/*HASTA AQIIIIIIIIII--------------------------*/
 
 #right_inferior_2{
   flex: 1;
@@ -470,9 +462,9 @@ footer {
   box-sizing: border-box;
 }
 
-#footer_izq,
-#footer_ctr,
-#footer_dra {
+/* Footer barra de abajo */
+
+#footer_izq, #footer_ctr, #footer_dra {
   flex: 1;   
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
@@ -509,7 +501,7 @@ footer {
 }
 
 
-/*VERSION_A---------------------------------------*/
+/* VERSION_A */
 body:has(#registro_nuevos_usuarios) {
   margin: 0;
   min-height: 100vh;       
@@ -557,7 +549,7 @@ body:has(#registro_nuevos_usuarios) {
   margin: 10px 10px;
 }
 
-/*VERSION_B---------------------------------------*/
+/* VERSION_B */
 .perfil {
   display: flex;
   align-items: center;
@@ -570,9 +562,22 @@ body:has(#registro_nuevos_usuarios) {
   width: 100px; height: 100px; border-radius: 50%;
   border: 3px solid #142d4c; object-fit: cover; background: #9fd3c7;
 }
-.perfil_datos { display: flex; flex-direction: column; gap: 6px; }
-.nombre_usuario { font-size: 1.1rem; margin: 0; }
-.email_usuario { font-size: 0.9rem; margin: 0; opacity: .9; }
+.perfil_datos { 
+  display: flex; 
+  flex-direction: 
+  column; gap: 6px; 
+}
+
+.nombre_usuario { 
+  font-size: 1.1rem; 
+  margin: 0; 
+}
+
+.email_usuario { 
+  font-size: 0.9rem; 
+  margin: 0; 
+  opacity: .9; 
+}
 
 .filtros {
   display: flex;
@@ -596,14 +601,13 @@ body:has(#registro_nuevos_usuarios) {
 }
 
 .searchbar { 
- 
   display: flex; 
   max-width: 60%;
   margin: 0% auto;
   justify-content: center; 
-  /* flex:1  Esto no tiene nada de sentido aquí */
   }
 
+  /* Añadimos una barra mas a la derecha */
   #right_inferior_4{
   flex: 1;
   text-align: center;
@@ -623,14 +627,17 @@ body:has(#registro_nuevos_usuarios) {
   padding: 5px 10px;
 
 }
-  #calendario {
-    max-width: 100%;   /* fits inside the container */
-    height: auto;      /* keeps proportions */
-    margin-top: 10px;  /* space after the title */
-    border-radius: 10px;
+
+/* Foto Calendari */
+
+#calendario { 
+  max-width: 100%;   
+  height: auto;      
+  margin-top: 10px;  
+  border-radius: 10px;
 }
 
-/*VERSION_C---------------------------------------*/
+/* VERSION_C */
 #c_main_columna{
   display: flex;
   width: 100%;
@@ -654,9 +661,9 @@ body:has(#registro_nuevos_usuarios) {
   flex: 0, 0, auto;
   background-color: #2c7393bb;
   border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  min-height: 0; /* let banner + slide split space properly */
+  border-width: 4px;     
+  border-color: #142d4c;   
+  min-height: 0; 
   border-radius: 10px;
   padding: 16px;
   overflow: hidden;
@@ -671,37 +678,37 @@ body:has(#registro_nuevos_usuarios) {
   background: #fff;
   box-shadow: 0 6px 14px rgba(0,0,0,.06);
   width: min(540px, 100% - 32px); /* 32px = 16px izq + 16px dcha */
-  margin-inline: auto;            /* centra horizontalmente */
-  margin-block: 16px;             /* mismo margen arriba y abajo */
+  margin-inline: auto;            
+  margin-block: 16px;             
   flex: none;                   /* evita que se estire (si .pack tiene flex:1) */
   box-sizing: border-box;
 }
 
 #c_izq_1 .pack-small{
-  display: flex;            /* fila: imagen | info */
+  display: flex;            
   align-items: stretch;     /* ambas columnas a la misma altura */
 }
 
 #c_izq_1 .pack-small .imagen{
   flex: 0 0 60%;            /* ancho de la columna de imagen */
-  display: flex;            /* para que el <img> pueda estirarse en alto */
+  display: flex;            /* para que la imagen pueda estirarse en alto */
   min-height: 0;
 }
 
 #c_izq_1 .pack-small .imagen img{
   width: 100%;
-  height: 100%;             /* CLAVE: llena toda la altura disponible */
+  height: 100%;             
   object-fit: cover;        /* recorta manteniendo proporción */
-  aspect-ratio: auto;       /* anula el 16/10 global */
+  aspect-ratio: auto;       
   display: block;
 }
 
-/* Info más compacta */
+/* Info mas compacta */
 .pack-small .info {
   flex: 1 1 40%;
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* centra el texto verticalmente */
+  justify-content: center;  
 }
 
 #c_izq_2{
@@ -710,19 +717,21 @@ body:has(#registro_nuevos_usuarios) {
   flex: 0, 0, auto;
   background-color: #2c7393bb; 
   border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  min-height: 0; /* let banner + slide split space properly */
+  border-width: 4px;    
+  border-color: #142d4c;   
+  min-height: 0; 
   border-radius: 10px;
   min-width: 0;
 }
 
-#c_izq_2_titulo { text-align: center; } /* opcional si lo quieres centrado */
+#c_izq_2_titulo { 
+  text-align: center; 
+} 
 
 #c_izq_2_titulo h2{
   padding: 5px, 10px;
   font-family: 'Courier New', Courier, monospace;
-  display: inline-block;         /* deja de ocupar el 100% */
+  display: inline-block;         
   margin: 10px;
   padding: 5px 10px;
   background-color: #142d4c;
@@ -730,7 +739,6 @@ body:has(#registro_nuevos_usuarios) {
   border-radius: 10px;
   font-weight: 400;
 }
-
 
 #c_izq_2_texto {
   min-width: 0;
@@ -745,20 +753,18 @@ body:has(#registro_nuevos_usuarios) {
 
 #c_izq_2_texto p{
   overflow-wrap: anywhere;
-  max-width: 68ch;               /* ~65–70 caracteres por línea = más legible */
+  max-width: 68ch;               
   margin: 8px auto 18px;
-  text-align: justify;           /* justifica líneas */
-  text-justify: inter-word;      /* reparte mejor el espacio */
-  line-height: 1.6;              /* más separación entre líneas */
-  letter-spacing: .1px;          /* un pelín de aire entre letras */
-  word-break: normal;            /* evita cortes feos */
-  color: #e9f1f6;                /* opcional: sube contraste si lo necesitas */
-  line-height: 1.4;         /* mejora legibilidad al aumentar zoom */
-  word-break: break-word;   /* “cinturón y tirantes” para navegadores antiguos */
-  hyphens: auto;            /* guiones automáticos */
-
+  text-align: justify;           
+  text-justify: inter-word;      
+  line-height: 1.6;              
+  letter-spacing: .1px;          /* Espacio entre letras */
+  word-break: normal;            
+  color: #e9f1f6;                
+  line-height: 1.4;         
+  word-break: break-word;   
+  hyphens: auto;            
 }
-
 
 #c_der{
   margin-top: 10px;
@@ -766,9 +772,9 @@ body:has(#registro_nuevos_usuarios) {
   flex: 6;
   background-color: #2c7393bb; 
   border-style: solid;
-  border-width: 4px;     /* thickness */
-  border-color: #142d4c;   /* color */
-  min-height: 0; /* let banner + slide split space properly */
+  border-width: 4px;     
+  border-color: #142d4c;   
+  min-height: 0; 
   border-radius: 10px;
   margin-right: 10px;
   display: flex;
@@ -788,7 +794,7 @@ body:has(#registro_nuevos_usuarios) {
   margin: auto auto;
 }
 
-/* Título */
+
 .titulo-form{
   margin: 0 0 14px 0;
   text-align: center;
@@ -797,7 +803,6 @@ body:has(#registro_nuevos_usuarios) {
   font-weight: 700;
 }
 
-/* Inputs heredados de A, solo afinamos tamaños y separación */
 .form-compra .texto_registro{
   width: 100%;
   padding: 10px 12px;
@@ -811,17 +816,20 @@ body:has(#registro_nuevos_usuarios) {
   background: #ffffff;
 }
 
-/* Separación vertical homogénea */
-.form-compra label{ display:block; margin-top: 12px; margin-bottom: 6px; }
+/* Separacion vertical */
+.form-compra label{ 
+  display:block; 
+  margin-top: 12px; 
+  margin-bottom: 6px; 
+}
 
-/* Dos columnas para caducidad / CVV */
+
 .row-2{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
-/* Botones alineados como en el wireframe */
 .acciones{
   display: flex;
   gap: 12px;
@@ -829,24 +837,17 @@ body:has(#registro_nuevos_usuarios) {
   margin-top: 18px;
 }
 
-/* Opcional: igualar alto de los botones heredados */
-.acciones .boton,
-.acciones .boton_alternativo{ padding: 10px 18px; }
+.acciones .boton, .acciones .boton_alternativo{ 
+  padding: 10px 18px; 
+}
 
-
-
-
-/*?????????'' NO SE QUE ES :((((((( */
-
-
+/* Estiliza de Manera estecial los botones dentro de la clase .botones */
 .botones button{
   font-family: 'Courier New', Courier, monospace;
   color: white;
-  /*border-radius: 5px;*/
   background-color: #142d4c;
   cursor: pointer;
   border: none;
-  /*Estilo de los botones*/
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -856,11 +857,9 @@ body:has(#registro_nuevos_usuarios) {
   border-radius: 7px;
 }
 
-#boton_inicio{  /*Change this to flex*/
+#boton_inicio{  
   margin-right: 3%;
 }
-
-
 
 
 /* Solo en páginas que tienen #registro_nuevos_usuarios */
@@ -868,20 +867,25 @@ body:has(#c_main_columna) {
   margin: 0;
   min-height: 100svh;
   display: grid;
-  grid-template-rows: auto 1fr auto; /* header | contenido | footer */
+  grid-template-rows: auto 1fr auto; /* header --> contenido --> footer */
 }
 
 
+/* ESTO ES PARA LAS DISTINTAS VERSIONES: MOVIL Y TABLET*/
+
+* { 
+  /* Padding y borders incluidos ahora en calculo de ancho y alto */
+  box-sizing: border-box; 
+}
 
 
-/* ESTO ES PARA LAS DISTINTAS VERSIONES; NO BORRAR */
+img, video { 
+  /* La imagen pues reducirse */
+  max-width: 100%; 
+  height: auto; 
+}
 
-/*DARLE UNA VUELTA A ESTO  QUE ES CTRLC CV*/
-/* --- Helpers responsive --- */
-* { box-sizing: border-box; }
-img, video { max-width: 100%; height: auto; }
-
-/* --- MÓVIL (≤767px): apila columnas y elimina alturas fijas --- */
+/* Movil <= 767px */
 @media (max-width: 600px) {
   
   header{
@@ -898,6 +902,15 @@ img, video { max-width: 100%; height: auto; }
     flex-direction: column;
   }
 
+  footer{
+    flex-direction: column;
+  }
+
+  #footer_izq, #footer_ctr, #footer_dra{
+    flex: 1 1 auto;
+    margin: 10px;
+  }
+
   .row { 
     flex-direction: column; 
   }
@@ -907,19 +920,19 @@ img, video { max-width: 100%; height: auto; }
   }
 
   .parte_b {
-    flex-direction: column;   /* instead of row */
-    align-items: center;      /* center the single column */
+    flex-direction: column;   
+    align-items: center;     
     margin-bottom: 10px;
   }
 
   .columna_tarjetas {
     width: 100%;
-    max-width: 420px;         /* opcional: limita para que no sea demasiado ancha */
-    margin: 0 auto;           /* centrada */
+    max-width: 420px;        
+    margin: 0 auto;           
   }
 
   .Tarjeta {
-    width: 100%;              /* take full width */
+    width: 100%;             
   }
 
   #c_main_columna{
@@ -934,27 +947,38 @@ img, video { max-width: 100%; height: auto; }
     flex-direction: column;
   }
   
-  /* Evitar desbordes por alturas fijas en móvil */
-  .right_inferior,
-  .columna_abajo { height: auto; }
+  .right_inferior, .columna_abajo { 
+    height: auto; 
+  }
 
-  /* Banner más compacto en móvil */
-  .banner { height: 140px; }
+  .banner { 
+    height: 140px; 
+  }
 
-  /* Navegación más flexible en móvil */
-  #header_ctr { flex-wrap: wrap; gap: 8px; }
-  #header_ctr a { padding: 8px 10px; }
+  #header_ctr { 
+    flex-wrap: wrap; 
+    gap: 8px; 
+  }
+
+  #header_ctr a { 
+    padding: 8px 10px; 
+  }
 }
 
-/* --- TABLET (768–1023px): 2/3 + 1/3 lado a lado --- */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .row { flex-direction: row; }
-  .left { flex: 2; }
-  .right { flex: 1; }
+
+/* 601px < Tablet <= 768px */
+@media (min-width: 601px) and (max-width: 768px) {
+    .row { 
+    flex-direction: column; 
+  }
+  .left, .right {
+    flex: 1 1 auto;
+    margin: 10px;
+  }
+
 }
 
-/* --- DESKTOP (≥1024px): mantiene distribución en fila --- */
-@media (min-width: 1024px) {
-  .row { flex-direction: row; }
-}
+
+
+
 
