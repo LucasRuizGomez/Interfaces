@@ -1,5 +1,5 @@
 body {
-  background-image: url("./imagenes/underwater_2.jpg");
+  background-image: url("../images/underwater_2.jpg");
   background-size: 100% 100%; 
   background-position: center;
   background-color:  #ececec;
@@ -89,7 +89,7 @@ height:50px;
 /* Baner */
 .banner {
   margin-top: 10px; 
-  background-image: url("./imagenes/cataratas.jpg");
+  background-image: url("../images/cataratas.jpg");
   background-size: cover;
   background-position: center;
   height: 200px;
