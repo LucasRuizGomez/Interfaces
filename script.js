@@ -48,3 +48,76 @@ function siguiente_slide(){
     slideindex++;
     showSlide(slideindex);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//INICIO DE SESION
+
+//Esto es un test
+function saveUser() {
+    const user = { username: "1", password: "1" };
+
+    localStorage.setItem("user", JSON.stringify(user));
+}
+
+saveUser();
+
+// Función para comprobar si las credenciales están en localStorage
+document.getElementById('inicio_sesion').addEventListener('click', function() {
+
+    const usuario = document.getElementById('nombre').value;
+    const password = document.getElementById('apellido').value;
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+    if (usuario === storedUser.username && password === storedUser.password) {
+        window.location.href = 'version_b.html'; 
+    } else {
+        alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+    }
+});
+
+
+
+
+
+//CODIGO VERSION A
+
+
+document.getElementById('boton_guardar_datos').addEventListener('click', function(){
+
+
+    
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
