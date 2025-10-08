@@ -45,19 +45,26 @@
 					</div>
 			</div>
 
-			<div class="imagenes_slide">
-				<!--Slide de imagenes-->
-				<button class="flecha">◀</button>
-				<div class="pack">
+			<div class="imagenes_slide"> 
+				<!--Slide de imagenes Nota: Esto es el Carousel-->
+
+				<button class="flecha_antes" onclick="previa_slide()">◀</button>
+		
+				<div class="pack" alt= "paquete 1">
 						<img src="./images/sudesteasiatico.jpg" alt="Pack Sudeste Asiático">
+						<img src="./images/Camellos.jpg" alt="Pack Egipto">
+						<img src="./images/jungla.jpg" alt="Pack Guatemala">
 					<div class="info">
 						<h3>Pack Sudeste Asiático</h3>
 						<p>Vietnam & Camboya: buses, hostales y guía de visados</p>
 						<span class="precio">600€</span>
 						<button class="boton" type="button" onclick="window.location.href='version_c.html'">Comprar</button>
 					</div>
+
+				
+
 				</div>
-				<button class="flecha">▶</button>
+				<button class="flecha_despues" onclick="siguiente_slide()">▶</button>
 			</div>
 		</div>
 
@@ -247,6 +254,6 @@
 
 
 
-
+<script src="script.js" defer></script>
 </body>
 </html>

@@ -131,7 +131,34 @@ height:50px;
   border-radius: 10px;
 }
 
-.flecha {
+.imagenes_slide img{
+  display: none;
+
+}
+
+img.displaySlide{
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade{
+
+  from{opacity: .6;}
+  to{opacity: 1;}
+
+
+}
+
+
+.flecha_antes {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.flecha_despues {
   background: none;
   border: none;
   font-size: 24px;
@@ -139,6 +166,7 @@ height:50px;
 }
 
 .pack {
+  
   display: flex;
   flex-direction: column;
   width: 100%;
