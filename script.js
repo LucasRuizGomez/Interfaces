@@ -57,15 +57,6 @@ function siguiente_slide(){
 
 
 
-
-
-
-
-
-
-
-
-
 //INICIO DE SESION
 
 //Esto es un test
@@ -79,16 +70,22 @@ saveUser();
 
 // Función para comprobar si las credenciales están en localStorage
 document.getElementById('inicio_sesion').addEventListener('click', function() {
-
     const usuario = document.getElementById('nombre').value;
-    const password = document.getElementById('apellido').value;
+    const password = document.getElementById('Contraseña').value; // Cambié 'apellido' a 'password'
 
-    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedUser = localStorage.getItem('user');
 
-    if (usuario === storedUser.username && password === storedUser.password) {
-        window.location.href = 'version_b.html'; 
+    // Verificar si existe un usuario guardado
+    if (storedUser) {
+        const parsedUser = JSON.parse(storedUser);
+
+        if (usuario === parsedUser.username && password === parsedUser.password) {
+            window.location.href = 'version_b.html';  // Redirigir si las credenciales son correctas
+        } else {
+            alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+        }
     } else {
-        alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+        alert("No hay usuarios registrados. Por favor, regístrate.");
     }
 });
 
@@ -100,8 +97,21 @@ document.getElementById('inicio_sesion').addEventListener('click', function() {
 
 
 document.getElementById('boton_guardar_datos').addEventListener('click', function(){
+    const nombre = document.getElementById('nombre').value;
+    const password = document.getElementById('password').value;
 
+    // Validación básica de los campos
+    if (!nombre || !password) {
+        alert("Por favor, ingresa un nombre de usuario y una contraseña.");
+        return;
+    }
 
+    // Guardar los datos del usuario en localStorage
+    const user = { username: nombre, password: password };
+    localStorage.setItem('user', JSON.stringify(user));
+
+    alert("Usuario registrado correctamente.");
+    window.location.href = 'version_b.html'; // Redirigir a version_b.html
     
 
 
