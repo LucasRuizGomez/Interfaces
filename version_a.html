@@ -42,16 +42,16 @@
         <p id="registrarse">REGRISTRO NUEVOS USUARIOS</p>
         <input type="text" class="texto_registro" name="nombre" placeholder="Nombre" id="nombre">
         
-		<input type="text" class="texto_registro" name="apellido" placeholder="Apellido"><br>
+		<input type="text" class="texto_registro" name="apellido" placeholder="Apellido" id="apellido"><br>
 
-        <input type="text" class="texto_registro" name="correo_electronico" placeholder="Correo Electrónico">
-		<input type="text" class="texto_registro" name="confirmar_correo" placeholder="Confirmar Correo"><br>
+        <input type="text" class="texto_registro" name="correo_electronico" placeholder="Correo Electrónico" id="correo">
+		<input type="text" class="texto_registro" name="confirmar_correo" placeholder="Confirmar Correo" id="confirmar_correo"><br>
 
         <p class="extra_texto">Fecha de Nacimiento</p>
         <input type="date" class="texto_registro" name="nacimiento"><br>
 
-        <input type="text" class="texto_registro" name="usuario" placeholder="Usuario">
-		<input type="text" class="texto_registro" name="contrasenia" placeholder="Contraseña"><br>
+        <input type="text" class="texto_registro" name="usuario" placeholder="Usuario" id="usuario">
+		<input type="text" class="texto_registro" name="contrasenia" placeholder="Contraseña" id="contraseña"><br>
 
         <p class="extra_texto">Subir Imagen de Perfil</p>
         <!-- Aquí está usando dos classes distintas: extra_texto y margin -->
@@ -61,7 +61,7 @@
         <label for="privacidad" class="extra_texto">Acepto la Política de Privacidad</label><br>
 
         <!-- Boton Alineado a la derecha que te lleva a version_b -->
-		<button class="boton_alternativo" type="button" onclick="window.location.href='version_b.html'" id="boton_guardar_datos">Guardar datos y Acceder</button>
+		<button class="boton_alternativo" type="button" id="boton_guardar_datos">Guardar datos y Acceder</button>
 		<!-- Esto no puede ser clase boton porque tiene que tener otro fondo que el resto o sinó choca con el fondo -->
     </form>
     
@@ -91,6 +91,6 @@
 	</div>  
 </footer>
 
-
+<script src="script.js" defer></script>
 </body>
 </html>
