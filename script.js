@@ -96,7 +96,10 @@ if(carousel){
     // saveUser();
 
     // Función para comprobar si las credenciales están en localStorage
-    // localStorage.clear();  // This will clear all items from localStorage --> Linea de codigo para borrar todos users
+    //localStorage.clear(); 
+
+
+
 
     document.getElementById('inicio_sesion').addEventListener('click', function() {
         const usuario = document.getElementById('nombre').value;
@@ -155,6 +158,7 @@ document.getElementById('boton_guardar_datos').addEventListener('click', functio
     const usuario = document.getElementById('usuario').value;
     const contraseña = document.getElementById('contraseña').value;
 
+    const nacimiento = document.getElementById("nacimiento").value;
 
 
     // Validación básica de los campos --> Si no meten nada vaya
@@ -170,13 +174,13 @@ document.getElementById('boton_guardar_datos').addEventListener('click', functio
     }
 
     // 2. Apellidos: at least two strings with 3 characters each
-    const apellidoParts = apellido.split(" ");
-    if (apellidoParts.length < 2 || apellidoParts.some(part => part.length < 3)) {
-        alert("El apellido debe contener al menos dos cadenas de caracteres, cada una con al menos 3 caracteres.");
-        return;
-    }
+    // const apellidoParts = apellido.split(" ");
+    // if (apellidoParts.length < 2 || apellidoParts.some(part => part.length < 3)) {
+    //     alert("El apellido debe contener al menos dos cadenas de caracteres, cada una con al menos 3 caracteres.");
+    //     return;
+    // }
 
-    // 3. Correo electrónico: valid email format
+    // // 3. Correo electrónico: valid email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(correo)) {
         alert("Por favor, ingresa un correo electrónico válido.");
@@ -189,13 +193,13 @@ document.getElementById('boton_guardar_datos').addEventListener('click', functio
         return;
     }
 
-    // 5. Fecha de nacimiento: ensure it's not a future date
-    const today = new Date();
-    const birthDate = new Date(nacimiento);
-    if (birthDate > today) {
-        alert("La fecha de nacimiento no puede ser una fecha futura.");
-        return;
-    }
+     // 5. Fecha de nacimiento: ensure it's not a future date
+     const today = new Date();
+     const birthDate = new Date(nacimiento);
+     if (birthDate > today) {
+         alert("La fecha de nacimiento no puede ser una fecha futura.");
+         return;
+     }
 
     // 6. Login: at least 5 characters
     if (usuario.length < 5) {

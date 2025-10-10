@@ -129,10 +129,12 @@ height:50px;
   border-color: #142d4c;   
   min-height: 0; 
   border-radius: 10px;
+  
 }
 
 .imagenes_slide img{
   display: none;
+  height: 400px;
 
 }
 
