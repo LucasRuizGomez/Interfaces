@@ -578,6 +578,11 @@ body:has(#registro_nuevos_usuarios) {
   font-weight: 400;
   margin: 10px 10px;
 }
+.boton_alternativo:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 /* VERSION_B */
 .perfil {

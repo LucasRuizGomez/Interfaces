@@ -146,8 +146,21 @@ if(carousel){
 
 
 //CODIGO VERSION A
+// Habilitar/Deshabilitar el botón por la casilla de privacidad
+const checkPriv = document.getElementById('privacidad');
+const btnGuardar = document.getElementById('boton_guardar_datos');
 
+<<<<<<< HEAD
 const guardardatos = document.getElementById('boton_guardar_datos');
+=======
+// estado inicial (por si el usuario recarga con la casilla ya marcada)
+btnGuardar.disabled = !checkPriv.checked;
+
+// cuando cambia la casilla, alterna el disabled
+checkPriv.addEventListener('change', (e) => {
+  btnGuardar.disabled = !e.target.checked;
+});
+>>>>>>> f3d084e (He terminado de implementar todas las alertas del formulario:)
 
 if(guardardatos)
     
@@ -155,24 +168,32 @@ if(guardardatos)
         
     document.getElementById('boton_guardar_datos').addEventListener('click', function(){  //Todo lo que pase aquí es tras darle click al boton de guardar datos
     console.log("Button clicked, validating fields...");
+<<<<<<< HEAD
 
 
 
+=======
+    
+>>>>>>> f3d084e (He terminado de implementar todas las alertas del formulario:)
     const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
     const password = document.getElementById('apellido').value;
     const correo = document.getElementById('correo').value;
     const confirmar_correo = document.getElementById('confirmar_correo').value;
     const usuario = document.getElementById('usuario').value;
     const contraseña = document.getElementById('contraseña').value;
-
     const nacimiento = document.getElementById("nacimiento").value;
-
+    const privacidad = document.getElementById("privacidad").checked;
+    const imgPerfilInput = document.getElementById('img_perfil');
+    const imgFile = imgPerfilInput.files[0];
+    
 
     // Validación básica de los campos --> Si no meten nada vaya
-    if (!nombre || !password || !correo || !confirmar_correo || !usuario || !contraseña) {
-        alert("Por favor, completa todos los campos.");
+    if (!nombre || !apellido || !password || !correo || !confirmar_correo || !nacimiento || !usuario || !contraseña) {
+        alert("Por favor, completa todo  const imgFile = imgInput?.files?.[0] || null;s los campos.");
         return;  // Stops the function if any field is empty
     }
+
 
     // 1. Nombre: at least 3 characters
     if (nombre.length < 3) {
@@ -181,11 +202,11 @@ if(guardardatos)
     }
 
     // 2. Apellidos: at least two strings with 3 characters each
-    // const apellidoParts = apellido.split(" ");
-    // if (apellidoParts.length < 2 || apellidoParts.some(part => part.length < 3)) {
-    //     alert("El apellido debe contener al menos dos cadenas de caracteres, cada una con al menos 3 caracteres.");
-    //     return;
-    // }
+     const apellidoParts = apellido.split(" ");
+     if (apellidoParts.length < 2 || apellidoParts.some(part => part.length < 3)) {
+        alert("El apellido debe contener al menos dos cadenas de caracteres, cada una con al menos 3 caracteres.");
+        return;
+    }
 
     // // 3. Correo electrónico: valid email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -225,11 +246,24 @@ if(guardardatos)
     //Falta lo de acepto politica de privacidad y lo de las fotos
 
     // 9. Política de privacidad: checkbox must be checked
-    if (!privacidad) {
-        alert("Debes aceptar la política de privacidad.");
+      if (!privacidad) {
+        alert('Debes aceptar la política de privacidad.');
+        return;
+  }
+
+   
+    // 10. File
+    if (!imgFile) {
+        alert("Por favor, selecciona una imagen de perfil.");
         return;
     }
 
+    const allowedTypes = ['image/webp', 'image/png', 'image/jpeg']; // jpeg cubre jpg
+    if (!allowedTypes.includes(imgFile.type)) {
+        alert("Formato no válido. Solo se admiten WEBP, PNG o JPG.");
+        imgPerfilInput.value = ""; // limpia el campo
+        return;
+     }
 
 
 
