@@ -99,9 +99,11 @@ if(carousel){
     //localStorage.clear(); 
 
 
+    const iniciodesesion = document.getElementById("inicio_sesion");
 
+    if(iniciodesesion){
 
-    document.getElementById('inicio_sesion').addEventListener('click', function() {
+        document.getElementById('inicio_sesion').addEventListener('click', function() {
         const usuario = document.getElementById('nombre').value;
         const password = document.getElementById('Contraseña').value; // Cambié 'apellido' a 'password'
 
@@ -111,7 +113,7 @@ if(carousel){
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
 
-            if (usuario === parsedUser.username && password === parsedUser.password) {
+            if (usuario === parsedUser.usuario && password === parsedUser.contraseña) {
                 window.location.href = 'version_b.html';  // Redirigir si las credenciales son correctas
             } else {
                 alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
@@ -120,6 +122,9 @@ if(carousel){
             alert("No hay usuarios registrados. Por favor, regístrate.");
         }
     });
+    }
+
+    
 
 
     
@@ -140,17 +145,19 @@ if(carousel){
 
 
 
-
 //CODIGO VERSION A
 
+const guardardatos = document.getElementById('boton_guardar_datos');
 
-document.getElementById('boton_guardar_datos').addEventListener('click', function(){  //Todo lo que pase aquí es tras darle click al boton de guardar datos
+if(guardardatos)
+    
+    {
+        
+    document.getElementById('boton_guardar_datos').addEventListener('click', function(){  //Todo lo que pase aquí es tras darle click al boton de guardar datos
     console.log("Button clicked, validating fields...");
 
 
 
-
-    
     const nombre = document.getElementById('nombre').value;
     const password = document.getElementById('apellido').value;
     const correo = document.getElementById('correo').value;
@@ -214,6 +221,9 @@ document.getElementById('boton_guardar_datos').addEventListener('click', functio
         return;
     }
 
+
+    //Falta lo de acepto politica de privacidad y lo de las fotos
+
     // 9. Política de privacidad: checkbox must be checked
     if (!privacidad) {
         alert("Debes aceptar la política de privacidad.");
@@ -237,15 +247,39 @@ document.getElementById('boton_guardar_datos').addEventListener('click', functio
 
     alert("Usuario registrado correctamente.");
     window.location.href = 'version_b.html'; // Redirect to version_b.html
+});}
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Solo ejecutar en Version B
+    if (!window.location.pathname.includes('version_b.html')) return;
+
+    // Obtener el objeto user del localStorage
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+    
+    if (!storedUser) {
+        // Si no hay usuario, redirigir al Home
+        alert("Debes iniciar sesión primero.");
+        window.location.href = 'index.html';
+        return;
+    }
+
+    console.log(storedUser.nombre);
+
+
+    // Cambiar el <p> con id "nombre_usuario" para que muestre el nombre
+    const nombreUsuarioElement = document.getElementById('nombre_usuario');
+    if (nombreUsuarioElement) {
+        nombreUsuarioElement.textContent = storedUser.nombre; // <-- Aquí usamos "nombre"
+    }
 });
-
-
-
-
-
-
-
-
-
-
-
