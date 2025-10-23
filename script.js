@@ -150,9 +150,8 @@ if(carousel){
 const checkPriv = document.getElementById('privacidad');
 const btnGuardar = document.getElementById('boton_guardar_datos');
 
-<<<<<<< HEAD
 const guardardatos = document.getElementById('boton_guardar_datos');
-=======
+
 // estado inicial (por si el usuario recarga con la casilla ya marcada)
 btnGuardar.disabled = !checkPriv.checked;
 
@@ -160,7 +159,6 @@ btnGuardar.disabled = !checkPriv.checked;
 checkPriv.addEventListener('change', (e) => {
   btnGuardar.disabled = !e.target.checked;
 });
->>>>>>> f3d084e (He terminado de implementar todas las alertas del formulario:)
 
 if(guardardatos)
     
@@ -168,13 +166,7 @@ if(guardardatos)
         
     document.getElementById('boton_guardar_datos').addEventListener('click', function(){  //Todo lo que pase aquí es tras darle click al boton de guardar datos
     console.log("Button clicked, validating fields...");
-<<<<<<< HEAD
 
-
-
-=======
-    
->>>>>>> f3d084e (He terminado de implementar todas las alertas del formulario:)
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
     const password = document.getElementById('apellido').value;
