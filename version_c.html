@@ -76,8 +76,8 @@
 	<form id="checkout" class="form-compra" novalidate>
   		<h2 class="titulo-form">Formulario de compra</h2>
 
-  		<input id="full_name" name="full_name" class="texto_registro" type="text" placeholder="Nombre completo" required>
-		<input id="email" name="email" class="texto_registro" type="email" placeholder="Correo electrónico" required>
+  		<input id="full_name"	name="full_name" class="texto_registro" type="text" placeholder="Nombre completo" required>
+		<input id="email" 		name="email" 	class="texto_registro" type="email" placeholder="Correo electrónico" required>
 
   		<label class="extra_texto" for="card_type">Tipo de tarjeta</label>
   		<select id="card_type" name="card_type" class="texto_registro" required>
@@ -93,7 +93,7 @@
   		<div class="row-2">
     		<div>
       			<label class="extra_texto" for="expiry">Fecha de caducidad</label>
-      			<input id="expiry" name="expiry" class="texto_registro" type="text"
+      			<input id="expiry" name="expiry" class="texto_registro" type="date"
              placeholder="MM/AA" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
     		</div>
     		<div>
@@ -104,8 +104,8 @@
   		</div>
 
   		<div class="acciones">
-    		<button type="submit" class="boton_alternativo">Comprar</button>
-   			<button type="reset" class="boton_alternativo">Borrar</button>
+    		<button type="button" class="boton_alternativo"id="boton_comprar">Comprar</button>
+   			<button type="button" class="boton_alternativo">Borrar</button>
   		</div>
 	</form>
 </div>
