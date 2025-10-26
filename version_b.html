@@ -180,7 +180,7 @@
 			</div>
 
 			<div class="botones">
-				<button class="boton" type="button" onclick="window.location.href='index.html'">Cerrar Sesión</button>
+				<button class="boton" type="button" id="boton_cerrar_sesion">Cerrar Sesión</button>
 			</div>
 		</div>
 
@@ -204,21 +204,18 @@
 				<h2>Últimos Consejos</h2>
 
 				<ul class="list">
-					<li><a href="#">Como hacer un torniquete casero</a></li>
-					<li><a href="#">Como defenderse de un tiburón</a></li>
-					<li><a href="#">Como sobrevivir a los hostales</a></li>
-					<li><a href="#">Curas para picaduras de mosquitos torpedos</a></li>
-				</ul>
+                </ul>
 				
 			</div>
-			
-			<div id="right_inferior_3">
 
+			<div id="right_inferior_3">
 				<div class="formulario">
-					<form>
+					<form id="form_consejo">
 						<h2>¿Tienes algún Consejo?</h2> <br>
-						<input type="text" class="texto_registro" name="Título" placeholder="Título del Consejo"><br>
-						<input type="text" class="texto_registro" name="consejo" placeholder="Escriba consejo aquí"><br>
+						<input type="text" id="consejo_titulo" class="texto_registro" name="Título" placeholder="Título del Consejo"><br>
+						<input type="text" id="consejo_texto" class="texto_registro" name="consejo" placeholder="Escriba consejo aquí"><br>
+
+						<button type="submit" class="boton_alternativo" >Enviar Consejo</button>
 					</form>		
 				</div>
 			</div>

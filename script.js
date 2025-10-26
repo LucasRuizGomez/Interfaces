@@ -302,6 +302,104 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nombreUsuarioElement) {
             nombreUsuarioElement.textContent = storedUser.nombre; // <-- Aquí usamos "nombre"
         }
+
+
+        // --- CÓDIGO PARA CERRAR SESIÓN
+        const botonCerrarSesion = document.getElementById('boton_cerrar_sesion');
+        if (botonCerrarSesion) {
+            botonCerrarSesion.addEventListener('click', function() {
+                // ventana de confirmación
+                // Esto crea los botones "Confirmar" (Aceptar/OK) y "Cancelar"
+                const confirmado = confirm('¿Desea cerrar sesión?');
+                if (confirmado) {
+                    // Si pulsa "Confirmar" (OK):
+                    // Cerramos la sesión borrando al usuario
+                    localStorage.removeItem('user');
+                    // Redirigimos al index.html
+                    window.location.href = 'index.html';
+                } else {
+                    // Si pulsa "Cancelar", no hacemos nada.
+                }
+            });
+        }
+
+        // --- CÓDIGO  PARA CONSEJOS ---
+
+        // 1. Seleccionamos los elementos del DOM
+        const formConsejo = document.getElementById('form_consejo');
+        const consejoTituloInput = document.getElementById('consejo_titulo');
+        const consejoTextoInput = document.getElementById('consejo_texto');
+        const listaDOM = document.querySelector('#right_inferior_2 .list');
+
+        // 2. Función para cargar y pintar los consejos en el HTML
+        function cargarConsejos() {
+            // Obtenemos la lista de consejos de localStorage.
+            // Si no existe, usamos un array vacío [].
+            const consejosGuardados = JSON.parse(localStorage.getItem('consejos')) || [];
+            
+            // Limpiamos la lista actual en el HTML
+            listaDOM.innerHTML = '';
+
+            // Cogemos solo los 3 primeros (los más nuevos)
+            const ultimosTres = consejosGuardados.slice(0, 3);
+
+            // Creamos el HTML para cada consejo
+            ultimosTres.forEach(consejo => {
+                const li = document.createElement('li');
+                // Creamos el hipervínculo como pide el enunciado
+                li.innerHTML = `<a href="#">${consejo.titulo}</a>`;
+                listaDOM.appendChild(li);
+            });
+        }
+
+        // 3. Listener para cuando se envía el formulario
+        if (formConsejo) {
+            formConsejo.addEventListener('submit', function(e) {
+                // Evitamos que la página se recargue
+                e.preventDefault(); 
+
+                const titulo = consejoTituloInput.value.trim();
+                const texto = consejoTextoInput.value.trim();
+
+                // Validación 1: Título >= 15 caracteres
+                if (titulo.length < 15) {
+                    alert("El título del consejo debe tener al menos 15 caracteres.");
+                    return; // Detenemos la función
+                }
+
+                // Validación 2: Texto >= 30 caracteres
+                if (texto.length < 30) {
+                    alert("La descripción del consejo debe tener al menos 30 caracteres.");
+                    return; // Detenemos la función
+                }
+
+                // Si todo es correcto:
+                const nuevoConsejo = {
+                    titulo: titulo,
+                    texto: texto
+                };
+
+                // Obtenemos la lista actual, o un array vacío
+                let consejosGuardados = JSON.parse(localStorage.getItem('consejos')) || [];
+                
+                // Añadimos el nuevo consejo AL PRINCIPIO de la lista
+                consejosGuardados.unshift(nuevoConsejo);
+
+                // Guardamos la lista actualizada en localStorage
+                localStorage.setItem('consejos', JSON.stringify(consejosGuardados));
+
+                alert('¡Consejo añadido con éxito!');
+                
+                formConsejo.reset(); // Limpiamos el formulario
+                
+                // Volvemos a cargar la lista del DOM para que se vea el nuevo
+                cargarConsejos();
+            });
+        }
+
+        // 4. Carga inicial de consejos
+        // (Llamamos a la función 1 vez al cargar la página)
+        cargarConsejos();
     }
 
 
