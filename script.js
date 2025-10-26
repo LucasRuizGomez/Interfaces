@@ -212,6 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("La fecha de nacimiento no puede ser una fecha futura.");
             return;
         }
+        // Solo pueden registrarse mayores de 16
+        today.setFullYear(today.getFullYear() - 16);
+        if (birthDate > today) {
+            alert("Debes tener al menos 16 años para registrarte.");
+            return;
+        }
 
         // 6. Login: at least 5 characters
         if (usuario.length < 5) {
