@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(carousel){
 
-
         const slides = document.querySelectorAll(".pack img");
+        const flechaAntes = document.querySelector(".flecha_antes");
+        const flechaDespues = document.querySelector(".flecha_despues");
         let slideindex = 0;
         let intervalId = null;
-
-
         const titles = [
             { title: "Pack Sudeste Asiático", description: "Vietnam & Camboya: buses, hostales y guía de visados" },
             { title: "Pack Egipto", description: "Aventura en Egipto: pirámides, camellos y cultura milenaria" },
@@ -26,29 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeSlider();
 
         function initializeSlider(){
-
             slides[slideindex].classList.add("displaySlide");
             updateText(slideindex); // Actualiza el texto al inicializar
-            intervalId = setInterval(siguiente_slide, 5000);
-
+            intervalId = setInterval(siguiente_slide, 2000);
         }
 
         function showSlide(index){
-
             if(index >= slides.length){
-
                 slideindex = 0; 
             }
             else if(index < 0){
-
                 slideindex = slides.length - 1; // Te lleva al slide anterior
             }
-
-            //Esto me chirria un poco porque estamos cogiendo todas las imagenes dentro de slides y cambiando un atributo --> Deberiamos meter las <img> de aquí dentro de una clase?¿
             slides.forEach(img =>{
                 img.classList.remove("displaySlide");
             });
-
             slides[slideindex].classList.add("displaySlide");
             updateText(slideindex);  // Actualizar el texto cuando se cambia la imagen
         }
@@ -65,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function previa_slide(){
-            clearInterval(intervalId);
             slideindex--;
             showSlide(slideindex);
         }
@@ -75,6 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(slideindex);
         }
 
+        // Esta función reinicia el temporizador
+        function resetInterval() {
+        clearInterval(intervalId); // Borra el temporizador viejo
+        intervalId = setInterval(siguiente_slide, 2000); // Crea uno nuevo
+        }
+
+        // --- INICIALIZACIÓN Y LISTENERS ---
+        if (flechaAntes) {
+            flechaAntes.addEventListener('click', () => {
+                previa_slide(); // Mueve la diapositiva
+                resetInterval(); // Reinicia el temporizador
+            });
+        }
+
+        if (flechaDespues) {
+            flechaDespues.addEventListener('click', () => {
+                siguiente_slide(); // Mueve la diapositiva
+                resetInterval(); // Reinicia el temporizador
+            });
+        }
+           
         //INICIO DE SESION
 
         // //Esto es un test
