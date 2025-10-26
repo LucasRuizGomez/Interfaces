@@ -64,11 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             descriptionElement.textContent = titles[index].description;
         }
 
-
-
-
-
-
         function previa_slide(){
             clearInterval(intervalId);
             slideindex--;
@@ -79,10 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slideindex++;
             showSlide(slideindex);
         }
-
-
-
-
 
         //INICIO DE SESION
 
@@ -144,10 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //CODIGO VERSION A
-    // Habilitar/Deshabilitar el botón por la casilla de privacidad
-
     const guardardatos = document.getElementById('boton_guardar_datos');
     if(guardardatos){
+        // Habilitar/Deshabilitar el botón por la casilla de privacidad
         const checkPriv = document.getElementById('privacidad');
         // estado inicial (por si el usuario recarga con la casilla ya marcada)
         guardardatos.disabled = !checkPriv.checked;
@@ -232,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!privacidad) {
             alert('Debes aceptar la política de privacidad.');
             return;
-    }
+        }
 
     
         // 10. File
@@ -274,13 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //CODIGO VERSION b
-const perfilUsuario = document.querySelector('.perfil');
+    const perfilUsuario = document.querySelector('.perfil');
     if (perfilUsuario) {
 
         // Obtener el objeto user del localStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
 
-        
         if (!storedUser) {
             // Si no hay usuario, redirigir al Home
             alert("Debes iniciar sesión primero.");
@@ -354,11 +343,6 @@ const perfilUsuario = document.querySelector('.perfil');
         }
 
         // 6. Validar Fecha de Caducidad
-        const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
-        if (!expiryRegex.test(caducidad)) {
-            alert("La fecha de caducidad debe tener el formato MM/AA.");
-            return;
-        }
         const today = new Date();
         const expiryDate = new Date(caducidad);
         if (expiryDate < today) {
@@ -374,7 +358,8 @@ const perfilUsuario = document.querySelector('.perfil');
         }
 
         alert("¡Compra realizada!"); 
-
+        // Si llega a comprarlo, limpiamos formulario
+        checkout.reset();
 
     });
     }
