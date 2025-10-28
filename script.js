@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //Vale todo esto lo he hecho sin ayuda externa así que es un poco delicado pero funciona
 
     const carousel = document.querySelector(".pack");
-
     if(carousel){
 
         const slides = document.querySelectorAll(".pack img");
@@ -16,11 +15,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const flechaDespues = document.querySelector(".flecha_despues");
         let slideindex = 0;
         let intervalId = null;
-        const titles = [
-            { title: "Pack Sudeste Asiático", description: "Vietnam & Camboya: buses, hostales y guía de visados" },
-            { title: "Pack Egipto", description: "Aventura en Egipto: pirámides, camellos y cultura milenaria" },
-            { title: "Pack Guatemala", description: "Explora la jungla de Guatemala: cultura y naturaleza" }
-        ]; // Array de títulos y descripciones de cada imagen
+        // Información de los packs: título, descripción corta, descripción larga y precio
+    const titles = [
+    {
+        title: "Pack Sudeste Asiático",
+        description: "Vietnam & Camboya: buses, hostales y guía de visados",
+        descripcionLarga: `Embárcate en una aventura por Vietnam y Camboya con todo lo esencial para tu viaje mochilero.
+        Este pack incluye traslados en bus entre las principales ciudades, alojamiento en hostales mochileros
+        y una completa guía de visados para cruzar fronteras sin complicaciones. Descubre la bahía de Ha Long,
+        los templos de Angkor y la vibrante vida callejera de Hanói y Nom Pen.`,
+        precio: "600€"
+    },
+    {
+        title: "Pack Egipto",
+        description: "Aventura en Egipto: pirámides, camellos y cultura milenaria",
+        descripcionLarga: `Explora los secretos del Antiguo Egipto viajando entre El Cairo, Luxor y Asuán.
+        El pack incluye visitas guiadas a las pirámides de Giza, paseos en camello por el desierto y una travesía por el Nilo.
+        Vive una experiencia mágica entre historia, cultura y aventura en el corazón de África.`,
+        precio: "750€"
+    },
+    {
+        title: "Pack Guatemala",
+        description: "Explora la jungla de Guatemala: cultura y naturaleza",
+        descripcionLarga: `Descubre la jungla tropical y las ruinas mayas con este pack lleno de naturaleza y tradición.
+        Incluye excursiones por Tikal, navegación por el Lago Atitlán y visitas a comunidades locales. Ideal para aventureros
+        que buscan conexión con la naturaleza y culturas milenarias.`,
+        precio: "680€"
+    }
+    ];
+
+        // Array de títulos y descripciones de cada imagen
+        
+
 
         initializeSlider();
 
@@ -125,11 +151,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         }
 
-        
+        // --- GESTIONAR COMPRA DEL PACK ---
+        const botonesComprar = document.querySelectorAll(".botoncomprar");
+
+        botonesComprar.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            const imagenActual = document.querySelector(".pack img.displaySlide");
+            const packActual = titles[slideindex]; // Usamos el índice actual del carrusel
+
+            const packSeleccionado = {
+            titulo: packActual.title,
+            descripcion: packActual.description,
+            descripcionLarga: packActual.descripcionLarga,
+            imagen: imagenActual ? imagenActual.src : "",
+            precio: packActual.precio
+            };
+
+            localStorage.setItem("packSeleccionado", JSON.stringify(packSeleccionado));
+            window.location.href = "version_c.html";
+        });
+        });
 
 
+
         
-    }
+    } //Cierre carrusel
 
 
 
@@ -478,4 +524,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
     }
+    // --- MOSTRAR PACK EN VERSION C ---
+    const contenedorPack = document.getElementById("c_izq_1");
+    if (contenedorPack) {
+        // Obtener el pack guardado
+        const packGuardado = JSON.parse(localStorage.getItem("packSeleccionado"));
+
+        if (packGuardado) {
+            console.log("🧳 Cargando pack:", packGuardado);
+
+            // Elementos de la tarjeta del pack
+            const img         = contenedorPack.querySelector(".imagen img");
+            const titulo      = contenedorPack.querySelector(".info h3");
+            const descripcion = contenedorPack.querySelector(".info p");
+            const precio      = contenedorPack.querySelector(".precio");
+
+            if (img && packGuardado.imagen)      img.src = packGuardado.imagen;
+            if (titulo)                           titulo.textContent = packGuardado.titulo || "";
+            if (descripcion)                      descripcion.textContent = packGuardado.descripcion || "";
+            if (precio)                           precio.textContent = packGuardado.precio || "";
+
+            // 🟩 Añadimos la descripción larga (texto inferior)
+            const descripcionLarga = document.querySelector("#c_izq_2_texto p");
+            if (descripcionLarga) {
+                descripcionLarga.textContent = packGuardado.descripcionLarga || "No hay descripción disponible.";
+            }
+
+        } else {
+            console.warn("⚠️ No hay pack seleccionado en localStorage.");
+        }
+    }
+  
     });
+
