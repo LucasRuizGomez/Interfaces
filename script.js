@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         descripcionLarga: `Explora los secretos del Antiguo Egipto viajando entre El Cairo, Luxor y Asuán.
         El pack incluye visitas guiadas a las pirámides de Giza, paseos en camello por el desierto y una travesía por el Nilo.
         Vive una experiencia mágica entre historia, cultura y aventura en el corazón de África.`,
-        precio: "750€"
+        precio: "600€"
     },
     {
         title: "Pack Guatemala",
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         descripcionLarga: `Descubre la jungla tropical y las ruinas mayas con este pack lleno de naturaleza y tradición.
         Incluye excursiones por Tikal, navegación por el Lago Atitlán y visitas a comunidades locales. Ideal para aventureros
         que buscan conexión con la naturaleza y culturas milenarias.`,
-        precio: "680€"
+        precio: "600€"
     }
     ];
 
@@ -112,44 +112,46 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
            
-        //INICIO DE SESION
+        // --- INICIO DE SESIÓN ---
+        const botonLogin = document.getElementById("inicio_sesion");
 
-        // //Esto es un test
-        // function saveUser() {
-        //     const user = { username: "1", password: "1" };
+        if (botonLogin) {
+            botonLogin.addEventListener("click", () => {
+                const usuario = document.getElementById("nombre").value.trim();
+                const password = document.getElementById("Contraseña").value.trim();
 
-        //     localStorage.setItem("user", JSON.stringify(user));
-        // }
-
-        // saveUser();
-
-        // Función para comprobar si las credenciales están en localStorage
-        //localStorage.clear(); 
-
-
-        const iniciodesesion = document.getElementById("inicio_sesion");
-
-        if(iniciodesesion){
-            iniciodesesion.addEventListener('click', function() {
-            const usuario = document.getElementById('nombre').value;
-            const password = document.getElementById('Contraseña').value; // Cambié 'apellido' a 'password'
-
-            const storedUser = localStorage.getItem('user');
-
-            // Verificar si existe un usuario guardado
-            if (storedUser) {
-                const parsedUser = JSON.parse(storedUser);
-
-                if (usuario === parsedUser.usuario && password === parsedUser.contraseña) {
-                    window.location.href = 'version_b.html';  // Redirigir si las credenciales son correctas
-                } else {
-                    alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+                if (!usuario || !password) {
+                    alert("Por favor, introduce usuario y contraseña.");
+                    return;
                 }
-            } else {
-                alert("No hay usuarios registrados. Por favor, regístrate.");
-            }
-        });
+
+                // Cargar usuarios y logeados
+                const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+                let logeados = JSON.parse(localStorage.getItem("logeados")) || [];
+
+                // Buscar usuario existente
+                const user = usuarios.find(u => u.usuario === usuario && u.contraseña === password);
+
+                if (!user) {
+                    alert("Usuario o contraseña incorrectos.");
+                    return;
+                }
+
+                // Evitar duplicados en la lista de logeados
+                if (!logeados.some(u => u.usuario === user.usuario)) {
+                    logeados.push(user);
+                    localStorage.setItem("logeados", JSON.stringify(logeados));
+                }
+
+                alert(`Bienvenido, ${user.nombre}`);
+                window.location.href = "version_b.html";
+            });
         }
+
+
+
+
+
 
         // --- GESTIONAR COMPRA DEL PACK ---
         const botonesComprar = document.querySelectorAll(".botoncomprar");
@@ -191,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    //CODIGO VERSION A
+    //-------------------------CODIGO VERSION A---------------------------------
+
     const guardardatos = document.getElementById('boton_guardar_datos');
     if(guardardatos){
         // Habilitar/Deshabilitar el botón por la casilla de privacidad
@@ -218,39 +221,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const imgFile = imgPerfilInput.files[0];
         
 
-        // Validación básica de los campos --> Si no meten nada vaya
+        // Validación básica de los campos --> Si no meten nada 
         if (!nombre || !apellido || !correo || !confirmar_correo || !nacimiento || !usuario || !contraseña) {
             alert("Por favor, completa todo  const imgFile = imgInput?.files?.[0] || null;s los campos.");
             return;  // Stops the function if any field is empty
         }
-
-
         // 1. Nombre: at least 3 characters
         if (nombre.length < 3) {
             alert("El nombre debe tener al menos 3 caracteres.");
             return;
         }
-
         // 2. Apellidos: at least two strings with 3 characters each
         const apellidoParts = apellido.split(" ");
         if (apellidoParts.length < 2 || apellidoParts.some(part => part.length < 3)) {
             alert("El apellido debe contener al menos dos cadenas de caracteres, cada una con al menos 3 caracteres.");
             return;
         }
-
         // // 3. Correo electrónico: valid email format
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(correo)) {
             alert("Por favor, ingresa un correo electrónico válido.");
             return;
         }
-
         // 4. Confirmar correo electrónico: must match the first email
         if (correo !== confirmar_correo) {
             alert("Los correos electrónicos no coinciden.");
             return;
         }
-
         // 5. Fecha de nacimiento: ensure it's not a future date
         const today = new Date();
         const birthDate = new Date(nacimiento);
@@ -264,59 +261,79 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Debes tener al menos 16 años para registrarte.");
             return;
         }
-
         // 6. Login: at least 5 characters
         if (usuario.length < 5) {
             alert("El nombre de usuario debe tener al menos 5 caracteres.");
             return;
         }
-
         // 7. Contraseña: at least 8 characters, 1 uppercase, 1 lowercase, 2 numbers, 1 special character
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (!passwordRegex.test(contraseña)) {
             alert("La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula, 2 números y 1 carácter especial.");
             return;
         }
-
-
-        //Falta lo de acepto politica de privacidad y lo de las fotos
-
         // 9. Política de privacidad: checkbox must be checked
         if (!privacidad) {
             alert('Debes aceptar la política de privacidad.');
             return;
         }
-
-    
         // 10. File
         if (!imgFile) {
             alert("Por favor, selecciona una imagen de perfil.");
             return;
         }
-
         const allowedTypes = ['image/webp', 'image/png', 'image/jpeg']; // jpeg cubre jpg
         if (!allowedTypes.includes(imgFile.type)) {
             alert("Formato no válido. Solo se admiten WEBP, PNG o JPG.");
             imgPerfilInput.value = ""; // limpia el campo
             return;
         }
+        
+        // --- GUARDAR USUARIO EN localStorage e iniciar sesión automáticamente ---
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const nuevoUsuario = {
+                nombre,
+                apellido,
+                correo,
+                usuario,
+                contraseña,
+                nacimiento,
+                imgPerfil: e.target.result // ✅ se guarda la imagen en base64
+            };
 
+            // Cargar lista de usuarios
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+            // Verificar si el nombre de usuario ya existe
+            const existe = usuarios.some(u => u.usuario === usuario);
+            if (existe) {
+                alert("Ese nombre de usuario ya está registrado. Usa otro o inicia sesión.");
+                return;
+            }
 
-        // Save the user data to localStorage
-        const user = {
-            nombre: nombre,
-            apellido: apellido,
-            correo: correo,
-            usuario: usuario,
-            contraseña: contraseña,
-            nacimiento: nacimiento,
-            // imgPerfil: imgPerfil ? imgPerfil.name : null, // Store image name if available
+            // Agregar el nuevo usuario a la lista general
+            usuarios.push(nuevoUsuario);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+            // Asegurar que existe la lista de logeados
+            let logeados = JSON.parse(localStorage.getItem("logeados")) || [];
+
+            // Agregar al nuevo usuario directamente a logeados
+            logeados.push(nuevoUsuario);
+            localStorage.setItem("logeados", JSON.stringify(logeados));
+
+            // Guardar también una sesión activa (por si la necesitas luego)
+            localStorage.setItem("sesionActiva", JSON.stringify(nuevoUsuario));
+
+            alert(`¡Bienvenido, ${nuevoUsuario.nombre}! Tu cuenta ha sido creada e iniciada sesión automáticamente.`);
+            window.location.href = "version_b.html"; // 🔄 redirige directamente a la sesión activa
         };
-        localStorage.setItem('user', JSON.stringify(user));
 
-        alert("Usuario registrado correctamente.");
-        window.location.href = 'version_b.html'; // Redirect to version_b.html
+        reader.readAsDataURL(imgFile);
+
+
+
 
     });}
 
@@ -326,127 +343,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    //CODIGO VERSION b
-    const perfilUsuario = document.querySelector('.perfil');
-    if (perfilUsuario) {
+    //-------------------CODIGO VERSION B--------------------------
+ // === CÓDIGO VERSION B ===
+const perfilUsuario = document.querySelector(".perfil");
+if (perfilUsuario) {
 
-        // Obtener el objeto user del localStorage
-        const storedUser = JSON.parse(localStorage.getItem('user'));
+    // Recuperar lista de usuarios logeados
+    const logeados = JSON.parse(localStorage.getItem("logeados")) || [];
 
-        if (!storedUser) {
-            // Si no hay usuario, redirigir al Home
-            alert("Debes iniciar sesión primero.");
-            window.location.href = 'index.html';
-            return;
-        }
-
-        console.log(storedUser.nombre);
-
-
-        // Cambiar el <p> con id "nombre_usuario" para que muestre el nombre
-        const nombreUsuarioElement = document.getElementById('nombre_usuario');
-        if (nombreUsuarioElement) {
-            nombreUsuarioElement.textContent = storedUser.nombre; // <-- Aquí usamos "nombre"
-        }
-
-
-        // --- CÓDIGO PARA CERRAR SESIÓN
-        const botonCerrarSesion = document.getElementById('boton_cerrar_sesion');
-        if (botonCerrarSesion) {
-            botonCerrarSesion.addEventListener('click', function() {
-                // ventana de confirmación
-                // Esto crea los botones "Confirmar" (Aceptar/OK) y "Cancelar"
-                const confirmado = confirm('¿Desea cerrar sesión?');
-                if (confirmado) {
-                    // Si pulsa "Confirmar" (OK):
-                    // Cerramos la sesión borrando al usuario
-                    localStorage.removeItem('user');
-                    // Redirigimos al index.html
-                    window.location.href = 'index.html';
-                } else {
-                    // Si pulsa "Cancelar", no hacemos nada.
-                }
-            });
-        }
-
-        // --- CÓDIGO  PARA CONSEJOS ---
-
-        // 1. Seleccionamos los elementos del DOM
-        const formConsejo = document.getElementById('form_consejo');
-        const consejoTituloInput = document.getElementById('consejo_titulo');
-        const consejoTextoInput = document.getElementById('consejo_texto');
-        const listaDOM = document.querySelector('#right_inferior_2 .list');
-
-        // 2. Función para cargar y pintar los consejos en el HTML
-        function cargarConsejos() {
-            // Obtenemos la lista de consejos de localStorage.
-            // Si no existe, usamos un array vacío [].
-            const consejosGuardados = JSON.parse(localStorage.getItem('consejos')) || [];
-            
-            // Limpiamos la lista actual en el HTML
-            listaDOM.innerHTML = '';
-
-            // Cogemos solo los 3 primeros (los más nuevos)
-            const ultimosTres = consejosGuardados.slice(0, 3);
-
-            // Creamos el HTML para cada consejo
-            ultimosTres.forEach(consejo => {
-                const li = document.createElement('li');
-                // Creamos el hipervínculo como pide el enunciado
-                li.innerHTML = `<a href="#">${consejo.titulo}</a>`;
-                listaDOM.appendChild(li);
-            });
-        }
-
-        // 3. Listener para cuando se envía el formulario
-        if (formConsejo) {
-            formConsejo.addEventListener('submit', function(e) {
-                // Evitamos que la página se recargue
-                e.preventDefault(); 
-
-                const titulo = consejoTituloInput.value.trim();
-                const texto = consejoTextoInput.value.trim();
-
-                // Validación 1: Título >= 15 caracteres
-                if (titulo.length < 15) {
-                    alert("El título del consejo debe tener al menos 15 caracteres.");
-                    return; // Detenemos la función
-                }
-
-                // Validación 2: Texto >= 30 caracteres
-                if (texto.length < 30) {
-                    alert("La descripción del consejo debe tener al menos 30 caracteres.");
-                    return; // Detenemos la función
-                }
-
-                // Si todo es correcto:
-                const nuevoConsejo = {
-                    titulo: titulo,
-                    texto: texto
-                };
-
-                // Obtenemos la lista actual, o un array vacío
-                let consejosGuardados = JSON.parse(localStorage.getItem('consejos')) || [];
-                
-                // Añadimos el nuevo consejo AL PRINCIPIO de la lista
-                consejosGuardados.unshift(nuevoConsejo);
-
-                // Guardamos la lista actualizada en localStorage
-                localStorage.setItem('consejos', JSON.stringify(consejosGuardados));
-
-                alert('¡Consejo añadido con éxito!');
-                
-                formConsejo.reset(); // Limpiamos el formulario
-                
-                // Volvemos a cargar la lista del DOM para que se vea el nuevo
-                cargarConsejos();
-            });
-        }
-
-        // 4. Carga inicial de consejos
-        // (Llamamos a la función 1 vez al cargar la página)
-        cargarConsejos();
+    if (logeados.length === 0) {
+        alert("No hay usuarios logeados. Inicia sesión primero.");
+        window.location.href = "index.html";
+        return;
     }
+
+    // Tomamos el último usuario logeado
+    const user = logeados[logeados.length - 1];
+
+    // Mostrar datos en la interfaz
+    const nombreUsuarioElement = document.getElementById("nombre_usuario");
+    const emailUsuarioElement = document.querySelector(".email_usuario");
+    const imgPerfilElement = document.getElementById("img_perfil_usuario");
+
+    if (nombreUsuarioElement) nombreUsuarioElement.textContent = `${user.nombre} ${user.apellido}`;
+    if (emailUsuarioElement) emailUsuarioElement.textContent = user.correo;
+    if (imgPerfilElement && user.imgPerfil) imgPerfilElement.src = user.imgPerfil;
+
+    // --- Cerrar sesión ---
+    const botonCerrarSesion = document.getElementById("boton_cerrar_sesion");
+    if (botonCerrarSesion) {
+        botonCerrarSesion.addEventListener("click", () => {
+            const confirmar = confirm("¿Deseas cerrar sesión?");
+            if (confirmar) {
+                const nuevosLogeados = logeados.filter(u => u.usuario !== user.usuario);
+                localStorage.setItem("logeados", JSON.stringify(nuevosLogeados));
+                alert("Sesión cerrada correctamente.");
+                window.location.href = "index.html";
+            }
+        });
+    }
+
+    // --- CÓDIGO PARA CONSEJOS ---
+    const formConsejo = document.getElementById("form_consejo");
+    const consejoTituloInput = document.getElementById("consejo_titulo");
+    const consejoTextoInput = document.getElementById("consejo_texto");
+    const listaDOM = document.querySelector("#right_inferior_2 .list");
+
+    function cargarConsejos() {
+        const consejosGuardados = JSON.parse(localStorage.getItem("consejos")) || [];
+        listaDOM.innerHTML = "";
+        const ultimosTres = consejosGuardados.slice(0, 3);
+        ultimosTres.forEach(consejo => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#">${consejo.titulo}</a>`;
+            listaDOM.appendChild(li);
+        });
+    }
+
+    if (formConsejo) {
+        formConsejo.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const titulo = consejoTituloInput.value.trim();
+            const texto = consejoTextoInput.value.trim();
+
+            if (titulo.length < 15) {
+                alert("El título del consejo debe tener al menos 15 caracteres.");
+                return;
+            }
+            if (texto.length < 30) {
+                alert("La descripción del consejo debe tener al menos 30 caracteres.");
+                return;
+            }
+
+            const nuevoConsejo = { titulo, texto };
+            let consejosGuardados = JSON.parse(localStorage.getItem("consejos")) || [];
+            consejosGuardados.unshift(nuevoConsejo);
+            localStorage.setItem("consejos", JSON.stringify(consejosGuardados));
+
+            alert("¡Consejo añadido con éxito!");
+            formConsejo.reset();
+            cargarConsejos();
+        });
+    }
+
+    cargarConsejos();
+}
+
 
 
     //CODIGO VERSION C
