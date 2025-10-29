@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
-//TODO ESTE CODIGO ES PARA EL CARROUSEL
-
-//POR HACER: Ajustar lo de el tamaño de cada imagen; A lo mejor que los botones estén fuera del div para q no se muevan.
-
-//Vale todo esto lo he hecho sin ayuda externa así que es un poco delicado pero funciona
-
     const carousel = document.querySelector(".pack");
     if(carousel){
 
@@ -43,10 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         precio: "600€"
     }
     ];
-
-        // Array de títulos y descripciones de cada imagen
-        
-
+    
 
         initializeSlider();
 
@@ -148,11 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-
-
-
-
-
         // --- GESTIONAR COMPRA DEL PACK ---
         const botonesComprar = document.querySelectorAll(".pack .boton");
 
@@ -178,16 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         
     } //Cierre carrusel
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -332,9 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         reader.readAsDataURL(imgFile);
 
-
-
-
     });}
 
 
@@ -344,13 +316,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //-------------------CODIGO VERSION B--------------------------
- // === CÓDIGO VERSION B ===
 const perfilUsuario = document.querySelector(".perfil");
 if (perfilUsuario) {
 
     // Recuperar lista de usuarios logeados
     const logeados = JSON.parse(localStorage.getItem("logeados")) || [];
-
     if (logeados.length === 0) {
         alert("No hay usuarios logeados. Inicia sesión primero.");
         window.location.href = "index.html";
@@ -507,6 +477,8 @@ if (perfilUsuario) {
 
     });
     }
+
+
     // --- MOSTRAR PACK EN VERSION C ---
     const contenedorPack = document.getElementById("c_izq_1");
     if (contenedorPack) {
@@ -527,7 +499,7 @@ if (perfilUsuario) {
             if (descripcion)                      descripcion.textContent = packGuardado.descripcion || "";
             if (precio)                           precio.textContent = packGuardado.precio || "";
 
-            // 🟩 Añadimos la descripción larga (texto inferior)
+            // Añadimos la descripción larga (texto inferior)
             const descripcionLarga = document.querySelector("#c_izq_2_texto p");
             if (descripcionLarga) {
                 descripcionLarga.textContent = packGuardado.descripcionLarga || "No hay descripción disponible.";
@@ -539,4 +511,3 @@ if (perfilUsuario) {
     }
   
     });
-

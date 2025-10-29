@@ -692,7 +692,6 @@ body:has(#registro_nuevos_usuarios) {
 #c_izq_1{
   margin-top: 10px;
   display: flex;
-  /* IMPORTANTE POR SI LO QUEREMOS DE LA OTRA FOMRA: Aquí he cambiado el flex:1 por flex: 0, 0, auto; */
   flex: 0, 0, auto;
   background-color: #2c7393bb;
   border-style: solid;
