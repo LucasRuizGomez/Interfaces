@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // --- GESTIONAR COMPRA DEL PACK ---
-        const botonesComprar = document.querySelectorAll(".botoncomprar");
+        const botonesComprar = document.querySelectorAll(".pack .boton");
 
         botonesComprar.forEach((boton) => {
         boton.addEventListener("click", () => {

@@ -920,7 +920,7 @@ img, video {
   height: auto; 
 }
 
-/* Movil <= 767px */
+/* Movil <= 600px */
 @media (max-width: 600px) {
   
   header{
@@ -998,6 +998,15 @@ img, video {
   #header_ctr a { 
     padding: 8px 10px; 
   }
+
+  .imagenes_slide img {
+    height: 220px;
+  }
+
+  .boton, .boton_alternativo {
+    width: 100%;
+  }
+
 }
 
 
